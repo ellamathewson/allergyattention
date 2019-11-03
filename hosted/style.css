@@ -1,3 +1,12 @@
+/*!
+ * Start Bootstrap - Heroic Features (https://startbootstrap.com/template-overviews/heroic-features)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-heroic-features/blob/master/LICENSE)
+ */
+ body {
+    padding-top: 56px;
+  }
+
 html, body {
     height: 100%;
     width: 100%;
@@ -20,7 +29,7 @@ nav {
     border: 1px solid black;
 }
 
-.navlink {
+/* .navlink {
     padding: 5px;
     padding-top: 12px;
     padding-left: 20px;
@@ -40,7 +49,7 @@ nav {
 .navlink a:hover {
     transition: background-color 0.8s ease;
     background-color: #66bdff;
-}
+} */
 
 .domoForm {
     border: 2px solid #338acc;
@@ -185,12 +194,9 @@ nav {
 }
 
 #domos {
-    width: 40%;
-    min-width: 400px;
     border: 2px solid #55acee;
     border-radius: 4px;
-    margin: 0 auto;
-    margin-top: 100px;
+   
 }
 
 .domo {
@@ -202,7 +208,6 @@ nav {
     border-radius: 4px;
     background-color: #55acee;
     padding: 10px;
-    min-height:60px;
     overflow: hidden;
 }
 
@@ -242,7 +247,6 @@ h3.domoName {
 h3.domoAge {
     float:right;
     text-align: left;
-    width: 100px;
     font-weight: bold;
     padding-right: 40px;
     font-size: 1.5em;
