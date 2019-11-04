@@ -7,6 +7,8 @@
     padding-top: 56px;
   }
 
+/* CSS */
+
 html, body {
     height: 100%;
     width: 100%;
@@ -14,6 +16,21 @@ html, body {
     padding: 0;
     overflow-x: hidden;
 }
+
+/* 
+
+MAIN PAGE
+
+
+*/
+
+
+.fa .fa-window-close {
+    font-size: 40px;
+}
+
+
+
 
 #logo {
     height: 40px;
@@ -50,6 +67,8 @@ nav {
     transition: background-color 0.8s ease;
     background-color: #66bdff;
 } */
+
+
 
 .domoForm {
     border: 2px solid #338acc;
