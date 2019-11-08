@@ -3,12 +3,9 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-heroic-features/blob/master/LICENSE)
  */
- body {
-    padding-top: 56px;
-  }
+
 
 /* CSS */
-
 html, body {
     height: 100%;
     width: 100%;
@@ -23,12 +20,54 @@ MAIN PAGE
 
 
 */
+#loginButton {
+    border: none;
+    background-color: #FFC11C;
+    color: white;
+}
 
+#loginButton:hover {
+    background-color: #FF9329;
+}
+
+#login {
+    border: 1px solid black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid green;
+    width: 50vw;
+    margin-left: 45vw;
+    padding: 0;
+}
 
 .fa .fa-window-close {
     font-size: 40px;
 }
 
+#foodForm {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 10%;
+}
+
+#addNewItem {
+    border: none;
+    width: 10vw;
+    height: 5vh;
+}
+
+#addNewItem:hover {
+    background-color: #FFCB75;
+}
 
 
 
