@@ -11,6 +11,14 @@
     font-family: 'Poppins', Helvetica, sans-serif;
 }
 
+nav {
+    background-color: #AB3428;
+}
+
+nav .container a {
+    color: white;
+}
+
 footer {
     margin-top: 25vh;
 }
