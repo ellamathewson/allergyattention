@@ -1,9 +1,11 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable import/no-extraneous-dependencies */
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const nodemon = require('gulp-nodemon');
 const eslint = require('gulp-eslint');
-
+const concat = require('gulp-concat');
 
 // Here we are defining a task to build our SCSS into browser ready css.
 const sassTask = (done) => {
@@ -13,10 +15,10 @@ const sassTask = (done) => {
   // gulp.src into the sass() function. The sass() function will
   // convert our .scss into .css. We also hook up the 'error' event
   // handler, in case sass encounters an error trying to build.
-  .pipe(sass().on('error', sass.logError))
+    .pipe(sass().on('error', sass.logError))
   // Finally, we take the .css output by the sass() function and pipe
   // that to gulp.dest, which writes a file out to a destination.
-  .pipe(gulp.dest('./hosted/'));
+    .pipe(gulp.dest('./hosted/'));
 
 
   // Sometimes we might want to run this task on a separate thread. Gulp
@@ -26,9 +28,8 @@ const sassTask = (done) => {
   done();
 };
 
-
 const loginBunleTask = (done) => {
-    // grab all the files we want to combine
+  // grab all the files we want to combine
   gulp.src(['./client/login/*.js', './client/helper/*.js'])
     .pipe(concat('loginBundle.js'))
     .pipe(babel({
@@ -53,13 +54,13 @@ const appBundleTask = (done) => {
 // Here we are defining a task that will run ESLint on our server code.
 const lintTask = (done) => {
   gulp.src(['./server/*.js'])
-  .pipe(eslint())
+    .pipe(eslint())
   // eslint() outputs an unformatted report of our errors, so we will pipe
   // that to the format function, which will make it human readable.
-  .pipe(eslint.format())
+    .pipe(eslint.format())
   // We then tell eslint that if there is an error (where we didn't follow
   // the style guide) then it should stop the rest of the task.
-  .pipe(eslint.failAfterError());
+    .pipe(eslint.failAfterError());
 
   // Finally, we tell gulp we are done running the task.
   done();
@@ -84,7 +85,7 @@ const watch = () => {
 
   // We also want it to watch our client side javascript, and if there are any
   // changes, we want it to run the jsTask from above.
-//   gulp.watch('./client/*.js', appBundleTask);
+  //   gulp.watch('./client/*.js', appBundleTask);
 
   // Finally, we want to start up nodemon to restart whenever our code changes.
   // Nodemon will watch EVERY file in our project, and will restart our 'script'

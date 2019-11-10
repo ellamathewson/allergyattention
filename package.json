@@ -1,5 +1,5 @@
 {
-  "name": "Logins",
+  "name": "AllergyAttention",
   "version": "1.0.0",
   "engines": {
     "node": "10.16.0",
@@ -21,33 +21,37 @@
     "Redis",
     "Login"
   ],
-  "author": "Cody Van De Mark",
+  "author": "Ella Mathewson",
   "license": "Apache 2.0",
   "dependencies": {
-    "body-parser": "^1.15.0",
-    "bootstrap": "^3.4.1",
-    "compression": "^1.6.1",
-    "connect-redis": "^3.0.2",
-    "cookie-parser": "^1.3.3",
-    "csurf": "^1.8.3",
-    "express": "^4.13.4",
-    "express-handlebars": "^3.0.0",
-    "express-session": "^1.13.0",
-    "helmet": "^1.3.0",
-    "mongoose": "^4.4.6",
-    "serve-favicon": "^2.3.0",
-    "underscore": "^1.8.3"
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "connect-redis": "^4.0.3",
+    "cookie-parser": "^1.4.4",
+    "csurf": "^1.10.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.7.7",
+    "redis": "^2.8.0",
+    "serve-favicon": "^2.5.0",
+    "underscore": "^1.9.1"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.11.2",
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
-    "eslint": "^3.0.0",
-    "eslint-config-airbnb": "^9.0.1",
-    "eslint-plugin-import": "^1.10.1",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
-    "nodemon": "^1.11.0"
+    "gulp-eslint": "^6.0.0",
+    "gulp-nodemon": "^2.4.2",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.0",
+    "nodemon": "^1.19.4"
   }
 }
