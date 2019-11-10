@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const controllers = require('./controllers');
 const mid = require('./middleware');
 

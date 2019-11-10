@@ -1,4 +1,8 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable prefer-destructuring */
 /* eslint-disable no-console */
+/* eslint-disable linebreak-style */
+
 // import libraries
 const path = require('path');
 const express = require('express');
@@ -8,9 +12,11 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const expressHandlebars = require('express-handlebars');
+
+// Connecting redis package
 const session = require('express-session');
-// Connecting redis package to store session data and cookies
 const RedisStore = require('connect-redis')(session);
+
 const url = require('url');
 const csrf = require('csurf');
 
