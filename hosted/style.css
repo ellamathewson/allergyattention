@@ -196,13 +196,13 @@ a {
     margin: 0 5vw;
   }
 
-  .addForm, .search {
+  .addForm, .search, .sort {
       width: 100%;
       border: 1px solid lightgray;
       border-radius: 5px;
   }
 
-  .search {
+  .search, .sort {
       margin-top: 5vh;
       display: flex;
       flex-direction: column;
@@ -217,4 +217,8 @@ a {
   .add {
     width: 80%;
     margin: 0 10%;
+  }
+
+  .sort {
+      margin-bottom: 5vh;
   }
