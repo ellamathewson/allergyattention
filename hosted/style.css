@@ -106,7 +106,7 @@ a {
     }
   }
 
-  #login {
+  .entryForm {
       width: 100vw;
       margin: 5vh 0 0 0;
       padding: 1em;

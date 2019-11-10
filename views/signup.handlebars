@@ -1,31 +1,71 @@
 <html lang="en">
+
 <head>
-  <meta charset="utf-8"/>
-  <title>DomoMaker</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Allergy Attention</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <link rel="shortcut icon" href="/hosted/img/peanutFavicon.png"/>
-  <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+  <link rel="shortcut icon" href="/assets/img/peanutFavicon.png" />
+  <link rel="stylesheet" type="text/css" href="/assets/style.css" />
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-  <nav><a href="/login"><img id="logo" src="/hosted/img/peanutFavicon.png" alt="face logo"/></a>
-    <div class="navlink"><a href="/login">Login</a></div>
-    <div class="navlink"><a href="/signup">Sign up</a></div>
-  </nav>
-  <section id="signup">
-    <form id="signupForm" name="signupForm" action="/signup" method="POST" class="mainForm">
-      <label for="username">Username: </label>
-      <input id="user" type="text" name="username" placeholder="username"/>
-      <label for="pass">Password: </label>
-      <input id="pass" type="password" name="pass" placeholder="password"/>
-      <label for="pass2">Password: </label>
-      <input id="pass2" type="password" name="pass2" placeholder="retype password"/>
-      <input type="hidden" name="_csrf" value={{csrfToken}} />
-      <input class="formSubmit" type="submit" value="Sign Up" />
-    </form>
-  </section>
-  <div id="domoMessage">
-    <h3><span id="errorMessage"></span></h3>
-  </div>
-  <script src="/assets/bundle.js"></script>
+  <!-- Navigation -->
+<nav>
+<div class="topnav" id="myTopnav">
+  <a id="title">Allergy Attention</a>
+  <a href="/login">Login</a>
+  <a href="/signup" class="active">Signup</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <img class="hamburger" src="/assets/img/menu.png">
+  </a>
+</div>
+</nav>
+
+  <!-- Page Content -->
+  <content>
+    <!-- Sidebar Widgets Column -->
+
+    <!-- Side Widget -->
+    <div class="entryForm">
+      <h3>Sign Up</h3>
+      <div >
+      <form id="signupForm" name="signupForm" action="/signup" method="POST" class="mainForm">
+        <input class="textBox" id="user" type="text" name="username" placeholder="Username"/>
+        <input class="textBox" id="pass" type="password" name="pass" placeholder="Password"/>
+        <input class="textBox" id="pass2" type="password" name="pass2" placeholder="Retype password"/>
+        <input type="hidden" name="_csrf" value={{csrfToken}} />
+        <input class="formSubmit" type="submit" value="Sign Up" />
+      </form>
+      </div>
+    </div>
+
+    <!-- Advertisement -->
+    <content>
+    <!-- /.container -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/assets/bundle.js"></script>
+    <script>
+      function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
 </body>
 </html>
