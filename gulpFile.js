@@ -30,7 +30,7 @@ const sassTask = (done) => {
 
 const loginBunleTask = (done) => {
   // grab all the files we want to combine
-  gulp.src(['./client/login/*.js', './client/helper/*.js'])
+  gulp.src(['./client/*.js'])
     .pipe(concat('loginBundle.js'))
     .pipe(babel({
       presets: ['@babel/preset-env', '@babel/preset-react'],
@@ -41,7 +41,7 @@ const loginBunleTask = (done) => {
 };
 
 const appBundleTask = (done) => {
-  gulp.src(['./client/app/*.js', '.client/helper/*.js'])
+  gulp.src(['./client/*.js', '.client/*.js'])
     .pipe(concat('appBundle.js'))
     .pipe(babel({
       presets: ['@babel/preset-env', '@babel/preset-react'],
