@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,54 +18,42 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
   <!-- Font awesome icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 
-<body> 
-    
+<body>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Allergy Attention</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/signup">Signup</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/ellamathewson/allergyattention">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">Allergy Attention</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      X<i class="fas fa-chevron-circle-down"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="container" id="content">
 
-    <div class="row">
-
-      <!-- Blog Entries Column -->
-      <div class="col-md-8">
-
+      <!-- <div class="col-md-8">
         <h1 class="my-4">Allery Attention
           {{!-- <small>Secondary Text</small> --}}
         </h1>
-
         <!-- Blog Post -->
-        <div class="card mb-4">
+        <!-- <div class="card mb-4" id="aboutCard">
           <div class="card-body">
             <h2 class="card-title">What is this site?</h2>
             <p class="card-text">
@@ -75,30 +64,28 @@
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <!-- Sidebar Widgets Column -->
-      <div class="col-md-4">
+        <!-- Sidebar Widgets Column -->
 
         <!-- Side Widget -->
-        <div class="card my-4">
+        <div class="card" id="login">
           <h5 class="card-header">Login</h5>
           <div class="card-body">
             <form id="loginForm" name="loginForm" action="/login" method="POST" class="mainForm">
-      <label for="username">Username: </label>
-      <input id="user" type="text" name="username" placeholder="username"/>
-      <label for="pass">Password: </label>
-      <input id="pass" type="password" name="pass" placeholder="password"/>
-      <input type="hidden" name="_csrf" value={{csrfToken}} />
-      <input class="formSubmit" type="submit" value="Sign In" />
-    </form>
+              <label for="username">Username: </label>
+              <input id="user" type="text" name="username" placeholder="username" />
+              <label for="pass">Password: </label>
+              <input id="pass" type="password" name="pass" placeholder="password" />
+              <input type="hidden" name="_csrf" value={{csrfToken}} />
+              <input class="formSubmit" type="submit" value="Sign In" />
+            </form>
           </div>
         </div>
 
-      </div>
-
-       <!-- Advertisement -->
-        <div class="card mb-4">
+        <br><br>
+        <!-- Advertisement -->
+        <div class="card">
           <div class="card-body">
             <h2 class="card-title">Epi Pens for cheap!</h2>
             <p class="card-text">
@@ -107,23 +94,20 @@
             <button>Shop now on Amazon</button>
           </div>
         </div>
-
-    </div>
-    <!-- /.row -->
-
-  </div>
-  <!-- /.container -->
-
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; 2019</p>
     </div>
     <!-- /.container -->
-  </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="/assets/bundle.js"></script>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; 2019</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/assets/bundle.js"></script>
 
 </body>
+
 </html>

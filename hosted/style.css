@@ -15,7 +15,15 @@ nav {
     background-color: #AB3428;
 }
 
-nav .container a {
+.nav-link {
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+#hamburger {
     color: white;
 }
 
@@ -27,4 +35,18 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+#aboutCard {
+    border: none;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+}
+
+#login {
+    width: 25vw;
+    margin: 0 35vw;
 }
