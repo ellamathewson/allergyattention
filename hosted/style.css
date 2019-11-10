@@ -107,8 +107,9 @@ a {
   }
 
   #login {
+      width: 100vw;
+      margin: 5vh 0 0 0;
       padding: 1em;
-      margin-top: 5vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -119,8 +120,8 @@ a {
   }
 
   .textBox {
-      width: 90%;
-      margin: 0 5%;
+      width: 60%;
+      margin: 0 20%;
       padding: 1em;
       border: 1px solid lightgrey;
   }
@@ -129,8 +130,8 @@ a {
       border: none;
       background-color: #AB3428;
       color: white;
-      width: 90%;
-      margin: 5%;
+      width: 60%;
+      margin: 5% 20%;
       padding: 1em;
   }
 
@@ -138,3 +139,10 @@ a {
     background-color: #F78D83;
     cursor: pointer;
   }
+
+  /* footer {
+      position: absolute;
+      bottom: 0;
+      width: 100vw;
+      height: 3em;
+  } */
