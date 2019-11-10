@@ -35,17 +35,12 @@
 </nav>
 
   <!-- Page Content -->
-  <div class="container">
+  <content id="appPage">
 
-    <div class="row">
-
+    <div class="main">
       <!-- Blog Entries Column -->
-      <div class="col-8">
-
-        <h1 class="my-4">Allergy Attention
-          {{!-- <small>Secondary Text</small> --}}
-        </h1>
-
+      <div id="posts">
+        <h1>Allergy Attention</h1>
         <!-- Blog Post -->
         <section id="domos">
           <div class="domo">
@@ -68,10 +63,11 @@
           </div>
         </section>
     </div>
-    <!-- /.row -->
+  </div>
 
 <!-- Sidebar Widgets Column -->
-      <div class="entryForm">
+    <div id="sidebar">
+       <div class="addForm">
        <h3>Add Food</h3>
          <div>
           <form id="domoForm" name="domoForm" action="/maker" method="POST" class="domoForm">
@@ -90,7 +86,7 @@
         </div>
       </div>
 
-        <!-- Search Widget -->
+      <!-- Search Widget -->
         <div class="card my-4">
           <h5 class="card-header">Search</h5>
           <div class="card-body">
@@ -103,7 +99,7 @@
           </div>
         </div>
 
-        <!-- Categories Widget -->
+      <!-- Categories Widget -->
         <div class="card my-4">
           <h5 class="card-header">Categories</h5>
           <div class="card-body">
@@ -131,10 +127,9 @@
             </div>
           </div>
         </div>
+    </div>        
 
-      </div>
-  </div>
-  </div>
+  </content>
   <!-- /.container -->
 
     <!-- Bootstrap core JavaScript -->
