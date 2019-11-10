@@ -35,7 +35,7 @@
 </nav>
 
   <!-- Page Content -->
-  <content id="appPage">
+  <content class="appPage">
 
     <div class="main">
       <!-- Blog Entries Column -->
@@ -66,14 +66,14 @@
   </div>
 
 <!-- Sidebar Widgets Column -->
-    <div id="sidebar">
+    <div class="sidebar">
        <div class="addForm">
        <h3>Add Food</h3>
          <div>
           <form id="domoForm" name="domoForm" action="/maker" method="POST" class="domoForm">
-            <input class="textBox" id="domoName" type="text" name="name" placeholder="Meal / Food Name" />
-            <input class="textBox" id="domoAge" type="text" name="age" placeholder="List Ingredients" />
-            <select id="selectBox">
+            <input class="textBox add" id="domoName" type="text" name="name" placeholder="Meal / Food Name" />
+            <input class="textBox add" id="domoAge" type="text" name="age" placeholder="List Ingredients w/ commas" />
+            <select class="selectBox">
               <option selected="selected" disabled="disabled">Rate the reaction:</option>
               <option value="urgentCare">Urgent Care</option>
               <option value="painful">Painful</option>
@@ -81,7 +81,7 @@
               <option value="noPain">No Pain</option>
             </select>
             <input type="hidden" name="_csrf" value={{csrfToken}} />
-            <input class="formSubmit" type="submit" value="Make Domo" />
+            <input class="formSubmit" type="submit" value="Add" />
           </form>
         </div>
       </div>

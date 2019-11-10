@@ -135,10 +135,10 @@ a {
       border: 1px solid lightgrey;
   }
 
-  #selectBox {
-      width: 60%;
-      margin: 0 20%;
-      padding: 1em;
+  .selectBox {
+    width: 80%;
+    margin: 0 10%;
+    padding: 1em;
   }
 
   .formSubmit {
@@ -172,20 +172,31 @@ a {
     APP PAGE
   
   */
-#appPage {
-      display: flex;
-      flex-direction: row;
+.appPage {
+    display: flex;
+    flex-direction: row;
   }
 
-  #main, #sidebar {
-      display: flex;
-      flex-direction: column;
+  .main, .sidebar {
+    display: flex;
+    flex-direction: column;
   }
 
-  #main {
-      width: 75vw;
+  .main {
+    width: 60vw;
   }
 
-  #sidebar {
-      width: 25vw;
+  .sidebar {
+    width: 30vw;
+    border: 1px solid pink;
+    margin: 0 5vw;
+  }
+
+  .addForm {
+      width: 100%;
+  }
+
+  .add {
+    width: 80%;
+    margin: 0 10%;
   }
