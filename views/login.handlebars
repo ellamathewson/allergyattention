@@ -36,7 +36,7 @@
 
 
   <!-- Page Content -->
-  <div class="container" id="content">
+  <content>
 
       <!-- <div class="col-md-8">
         <h1 class="my-4">Allery Attention
@@ -59,34 +59,22 @@
         <!-- Sidebar Widgets Column -->
 
         <!-- Side Widget -->
-        <div class="card" id="login">
-          <h5 class="card-header">Login</h5>
-          <div class="card-body">
+        <div id="login">
+          <h3>Login</h3>
+          <div >
             <form id="loginForm" name="loginForm" action="/login" method="POST" class="mainForm">
-              <label for="username">Username: </label>
-              <input id="user" type="text" name="username" placeholder="username" />
-              <label for="pass">Password: </label>
-              <input id="pass" type="password" name="pass" placeholder="password" />
+              <input class="textBox" id="user" type="text" name="username" placeholder="Username" />
+              <input class="textBox" id="pass" type="password" name="pass" placeholder="Password" />
               <input type="hidden" name="_csrf" value={{csrfToken}} />
               <input class="formSubmit" type="submit" value="Sign In" />
             </form>
           </div>
         </div>
 
-        <br><br>
         <!-- Advertisement -->
-        <div class="card">
-          <div class="card-body">
-            <h2 class="card-title">Epi Pens for cheap!</h2>
-            <p class="card-text">
-              Get them now before they're all gone!
-            </p>
-            <button>Shop now on Amazon</button>
-          </div>
-        </div>
-    </div>
+    <content>
     <!-- /.container -->
-
+    
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">

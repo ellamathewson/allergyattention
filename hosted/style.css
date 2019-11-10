@@ -25,7 +25,7 @@ footer {
     border: none;
 }
 
-#content {
+content {
     display: flex;
     flex-direction: column;
 }
@@ -39,6 +39,12 @@ footer {
     width: 25px;
     margin: 0;
 }
+
+/* 
+
+    NAV BAR 
+
+*/
 
 nav {
     background-color: #AB3428;
@@ -98,4 +104,37 @@ a {
       display: block;
       text-align: left;
     }
+  }
+
+  #login {
+      padding: 1em;
+      margin-top: 5vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  h3 {
+    margin-bottom: 1em!important;
+  }
+
+  .textBox {
+      width: 90%;
+      margin: 0 5%;
+      padding: 1em;
+      border: 1px solid lightgrey;
+  }
+
+  .formSubmit {
+      border: none;
+      background-color: #AB3428;
+      color: white;
+      width: 90%;
+      margin: 5%;
+      padding: 1em;
+  }
+
+  .formSubmit:hover {
+    background-color: #F78D83;
+    cursor: pointer;
   }
