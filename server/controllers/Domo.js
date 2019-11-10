@@ -1,5 +1,8 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable prefer-destructuring */
 /* eslint-disable no-console */
 const models = require('../models');
+
 const Domo = models.Domo;
 
 const makerPage = (req, res) => {
