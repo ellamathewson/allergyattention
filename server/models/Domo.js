@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable import/newline-after-import */
+/* eslint-disable import/no-self-import */
 module.exports.Account = require('./Account.js');
 module.exports.Domo = require('./Domo.js');
 
