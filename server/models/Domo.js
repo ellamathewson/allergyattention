@@ -13,6 +13,7 @@ let DomoModel = {};
 // mongoose.Types.ObjectID converts string ID to Mongo ID
 const convertId = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
+const setIngredients = (listOfFood) => _.escape(listOfFood).trim();
 
 const DomoSchema = new mongoose.Schema({
   name: {
@@ -23,9 +24,10 @@ const DomoSchema = new mongoose.Schema({
   },
 
   age: {
-    type: Number,
-    min: 0,
+    type: String,
     required: true,
+    trim: true,
+    set: setIngredients,
   },
 
   owner: {
