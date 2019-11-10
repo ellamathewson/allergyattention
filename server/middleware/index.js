@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /*
     Middleware functions receive a request, response, and then the next
     middleware function to call.
