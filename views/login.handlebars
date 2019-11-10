@@ -37,41 +37,23 @@
 
   <!-- Page Content -->
   <content>
+    <!-- Sidebar Widgets Column -->
 
-      <!-- <div class="col-md-8">
-        <h1 class="my-4">Allery Attention
-          {{!-- <small>Secondary Text</small> --}}
-        </h1>
-        <!-- Blog Post -->
-        <!-- <div class="card mb-4" id="aboutCard">
-          <div class="card-body">
-            <h2 class="card-title">What is this site?</h2>
-            <p class="card-text">
-              I never had allergies as a child. I ran ammuck in globs of peanut butter, swam
-              through streams of chocolate milk and ice cream, not a care in the world.
-              And then I was betrayed. My stomach started working against me, but I couldn't 
-              figure out what. 
-            </p>
-          </div>
-        </div>
-      </div> -->
+    <!-- Side Widget -->
+    <div class="entryForm">
+      <h3>Login</h3>
+      <div >
+        <form id="loginForm" name="loginForm" action="/login" method="POST" class="mainForm">
+          <input class="textBox" id="user" type="text" name="username" placeholder="Username" />
+          <input class="textBox" id="pass" type="password" name="pass" placeholder="Password" />
+          <input type="hidden" name="_csrf" value={{csrfToken}} />
+          <input class="formSubmit" type="submit" value="Sign In" />
+        </form>
+      </div>
+    </div>
 
-        <!-- Sidebar Widgets Column -->
-
-        <!-- Side Widget -->
-        <div class="entryForm">
-          <h3>Login</h3>
-          <div >
-            <form id="loginForm" name="loginForm" action="/login" method="POST" class="mainForm">
-              <input class="textBox" id="user" type="text" name="username" placeholder="Username" />
-              <input class="textBox" id="pass" type="password" name="pass" placeholder="Password" />
-              <input type="hidden" name="_csrf" value={{csrfToken}} />
-              <input class="formSubmit" type="submit" value="Sign In" />
-            </form>
-          </div>
-        </div>
-
-        <!-- Advertisement -->
+      <!-- Advertisement -->
+      <img class="epipenAd" src="/assets/img/epipenAd.jpg">
     <content>
     <!-- /.container -->
     
