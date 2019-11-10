@@ -17,33 +17,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-  <!-- Font awesome icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
-
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Allergy Attention</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/login">Posts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<nav>
+<div class="topnav" id="myTopnav">
+  <a id="title">Allergy Attention</a>
+  <a href="/login" class="active">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="/logout">Logout</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <img class="hamburger" src="/assets/img/menu.png">
+  </a>
+</div>
+</nav>
 
   <!-- Page Content -->
   <div class="container">
@@ -56,8 +45,6 @@
         <h1 class="my-4">Allergy Attention
           {{!-- <small>Secondary Text</small> --}}
         </h1>
-
-
 
         <!-- Blog Post -->
         <section id="domos">
@@ -84,23 +71,24 @@
     <!-- /.row -->
 
 <!-- Sidebar Widgets Column -->
-      <div class="col-md-4">
-        <!-- Side Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Add Food</h5>
-          <div class="card-body">
-            <section id="makeDomo">
-              <form id="domoForm" name="domoForm" action="/maker" method="POST" class="domoForm">
-                <label for="name">Name: </label>
-                <input id="domoName" type="text" name="name" placeholder="Domo Name" />
-                <label for="age">Age: </label>
-                <input id="domoAge" type="text" name="age" placeholder="Domo Age" />
-                <input type="hidden" name="_csrf" value={{csrfToken}} />
-                <input class="makeDomoSubmit" type="submit" value="Make Domo" />
-              </form>
-            </section>
-          </div>
+      <div class="entryForm">
+       <h3>Add Food</h3>
+         <div>
+          <form id="domoForm" name="domoForm" action="/maker" method="POST" class="domoForm">
+            <input class="textBox" id="domoName" type="text" name="name" placeholder="Meal / Food Name" />
+            <input class="textBox" id="domoAge" type="text" name="age" placeholder="List Ingredients" />
+            <select id="selectBox">
+              <option selected="selected" disabled="disabled">Rate the reaction:</option>
+              <option value="urgentCare">Urgent Care</option>
+              <option value="painful">Painful</option>
+              <option value="mildDiscomfort">Mild Discomfort</option>
+              <option value="noPain">No Pain</option>
+            </select>
+            <input type="hidden" name="_csrf" value={{csrfToken}} />
+            <input class="formSubmit" type="submit" value="Make Domo" />
+          </form>
         </div>
+      </div>
 
         <!-- Search Widget -->
         <div class="card my-4">
@@ -149,17 +137,18 @@
   </div>
   <!-- /.container -->
 
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-    <!-- /.container -->
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="/assets/bundle.js"></script>
-
+    <!-- Bootstrap core JavaScript -->
+    <script src="/assets/bundle.js"></script>
+    <script>
+      function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
 </body>
 
 </html>

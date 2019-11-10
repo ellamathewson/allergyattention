@@ -126,6 +126,12 @@ a {
       border: 1px solid lightgrey;
   }
 
+  #selectBox {
+      width: 60%;
+      margin: 0 20%;
+      padding: 1em;
+  }
+
   .formSubmit {
       border: none;
       background-color: #AB3428;
