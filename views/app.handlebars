@@ -36,34 +36,6 @@
   <!-- Page Content -->
   <content class="appPage">
 
-    <div class="main">
-      <!-- Blog Entries Column -->
-      <div id="posts">
-        <h1>Allergy Attention</h1>
-        <!-- Blog Post -->
-        <section id="domos">
-          <div class="domo">
-            {{#if domos}}
-            {{#each domos}}
-          <div class="card mb-4">
-            {{!-- <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> --}}
-            <div class="card-body">
-              <h2 class="card-title">{{this.name}}</h2>
-              <p class="card-text">{{this.age}}</p>
-            </div>
-            <div class="card-footer text-muted">
-              {{this.date}}
-            </div>
-          </div>
-            {{/each}}
-            {{else}}
-            <h3 class="emptyDomo">No food added</h3>          
-          {{/if}}
-          </div>
-        </section>
-    </div>
-  </div>
-
 <!-- Sidebar Widgets Column -->
     <div class="sidebar">
        <div class="addForm">
@@ -114,7 +86,35 @@
             </ul>
         </div>
     </div>  
-  </div>    
+  </div>  
+
+    <div class="main">
+    <!-- Blog Entries Column -->
+    <div id="posts">
+      <h1>Allergy Attention</h1>
+      <!-- Blog Post -->
+      <section id="domos">
+        <div class="domo">
+          {{#if domos}}
+          {{#each domos}}
+        <div class="card mb-4">
+          {{!-- <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> --}}
+          <div class="card-body">
+            <h2 class="card-title">{{this.name}}</h2>
+            <p class="card-text">{{this.age}}</p>
+          </div>
+          <div class="card-footer text-muted">
+            {{this.date}}
+          </div>
+        </div>
+          {{/each}}
+          {{else}}
+          <h3 class="emptyDomo">No food added</h3>          
+        {{/if}}
+        </div>
+      </section>
+  </div>
+</div>  
 
   </content>
   <!-- /.container -->

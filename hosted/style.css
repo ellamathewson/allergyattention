@@ -188,7 +188,7 @@ a {
 
   .main {
     width: 55vw;
-    margin: 0 0 0 5vw;
+    margin: 0 5vw 0 0;
   }
 
   .sidebar {
