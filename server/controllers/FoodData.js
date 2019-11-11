@@ -3,10 +3,10 @@
 /* eslint-disable no-console */
 const models = require('../models');
 
-const Domo = models.Domo;
+const Data = models.Data;
 
 const makerPage = (req, res) => {
-  Domo.DataModel.findByOwner(req.session.account._id, (err, docs) => {
+  Data.DataModel.findByOwner(req.session.account._id, (err, docs) => {
     if (err) {
       console.log(err);
       return res.status(400).json({ error: 'An error occured' });
@@ -27,7 +27,7 @@ const makePost = (req, res) => {
     owner: req.session.account._id,
   };
 
-  const newDomo = new Domo.DataModel(domoData);
+  const newDomo = new Data.DataModel(domoData);
 
   const dataPromise = newDomo.save();
 
