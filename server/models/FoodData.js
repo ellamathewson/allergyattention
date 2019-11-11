@@ -2,7 +2,7 @@
 /* eslint-disable import/newline-after-import */
 /* eslint-disable import/no-self-import */
 module.exports.Account = require('./Account.js');
-module.exports.Domo = require('./FoodData.js');
+module.exports.Data = require('./FoodData.js');
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;

@@ -32,18 +32,6 @@ mongoose.connect(dbURL, (err) => {
   }
 });
 
-// let redisURL = {
-//   hostname: 'redis-16069.c10.us-east-1-2.ec2.cloud.redislabs.com', // hostname from RedisLabs
-//   port: '16069', // port number from redis
-// };
-
-// let redisPASS = 'mAEMmm3ROpksD51HJSRtmcvuawrWqcGK'; // password from redisLabs
-
-// if (process.env.REDISCLOUD_URL) {
-//   redisURL = url.parse(process.env.REDISCLOUD_URL);
-//   redisPASS = redisURL.auth.split(':')[1];
-// }
-
 const client = redis.createClient({
   host: 'redis-16069.c10.us-east-1-2.ec2.cloud.redislabs.com',
   port: 16069,

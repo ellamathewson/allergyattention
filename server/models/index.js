@@ -1,3 +1,3 @@
 /* eslint-disable linebreak-style */
 module.exports.Account = require('./Account.js');
-module.exports.Domo = require('./FoodData.js');
+module.exports.Data = require('./FoodData.js');
