@@ -30,6 +30,11 @@ const DataSchema = new mongoose.Schema({
     set: setIngredients,
   },
 
+  level: {
+    type: String,
+    required: true,
+  },
+
   date: {
     type: Date,
     default: Date.now,
@@ -50,6 +55,7 @@ const DataSchema = new mongoose.Schema({
 DataSchema.statics.toAPI = (doc) => ({
   name: doc.name,
   age: doc.age,
+  level: doc.level,
   date: doc.date,
 
 });
@@ -59,7 +65,7 @@ DataSchema.statics.findByOwner = (ownerId, callback) => {
     owner: convertId(ownerId),
   };
 
-  return DataModel.find(search).select('name age date').exec(callback);
+  return DataModel.find(search).select('name age level date').exec(callback);
 };
 
 DataModel = mongoose.model('Domo', DataSchema);
