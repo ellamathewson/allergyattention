@@ -222,3 +222,18 @@ a {
   .sort {
       margin-bottom: 5vh;
   }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  li {
+      padding: 1em;
+      color: #62BEC1
+  }
+
+  li:hover {
+      color: #201E2A;
+  }
