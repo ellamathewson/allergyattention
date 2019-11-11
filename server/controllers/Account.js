@@ -1,8 +1,9 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 const models = require('../models');
 
-const Account = models.Account;
+const { Account } = models;
 
 const loginPage = (req, res) => {
   res.render('login', { csrfToken: req.csrfToken() });
@@ -13,7 +14,7 @@ const signupPage = (req, res) => {
 };
 
 const logout = (req, res) => {
-    // removes a user's session
+  // removes a user's session
   req.session.destroy();
   res.redirect('/');
 };
