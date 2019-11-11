@@ -12,7 +12,6 @@
 var handleError = function handleError(message) {
   $('#errorMessage').text(message);
   $('#errorModal').modal();
-  alert(message);
 };
 
 var sendAjax = function sendAjax(action, data) {
