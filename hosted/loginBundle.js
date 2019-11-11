@@ -11,9 +11,8 @@
 /* eslint-disable no-undef */
 var handleError = function handleError(message) {
   $('#errorMessage').text(message);
-  $('#domoMessage').animate({
-    width: 'toggle'
-  }, 350);
+  $('#errorModal').modal();
+  alert(message);
 };
 
 var sendAjax = function sendAjax(action, data) {
@@ -24,9 +23,7 @@ var sendAjax = function sendAjax(action, data) {
     data: data,
     dataType: 'json',
     success: function success(result, status, xhr) {
-      $('#domoMessage').animate({
-        width: 'hide'
-      }, 350);
+      $('#errorModal').modal('hide');
       window.location = result.redirect;
     },
     error: function error(xhr, status, _error) {
@@ -39,17 +36,15 @@ var sendAjax = function sendAjax(action, data) {
 $(document).ready(function () {
   $('#signupForm').on('submit', function (e) {
     e.preventDefault();
-    $('#domoMessage').animate({
-      width: 'hide'
-    }, 350);
+    $('#errorModal').modal('hide');
 
     if ($('#user').val() == '' || $('#pass').val() == '' || $('#pass2').val() == '') {
-      handleError('RAWR! All fields are required');
+      handleError('All fields are required');
       return false;
     }
 
     if ($('#pass').val() !== $('#pass2').val()) {
-      handleError('RAWR! Passwords do not match');
+      handleError('Passwords do not match');
       return false;
     }
 
@@ -58,12 +53,10 @@ $(document).ready(function () {
   });
   $('#loginForm').on('submit', function (e) {
     e.preventDefault();
-    $('#domoMessage').animate({
-      width: 'hide'
-    }, 350);
+    $('#errorModal').modal('hide');
 
     if ($('#user').val() == '' || $('#pass').val() == '') {
-      handleError('RAWR! Username or password is empty');
+      handleError('Username or password is empty');
       return false;
     }
 
@@ -72,12 +65,10 @@ $(document).ready(function () {
   });
   $('#domoForm').on('submit', function (e) {
     e.preventDefault();
-    $('#domoMessage').animate({
-      width: 'hide'
-    }, 350);
+    $('#errorModal').modal('hide');
 
     if ($('#domoName').val() == '' || $('#domoAge').val() == '') {
-      handleError('RAWR! All fields are required');
+      handleError('All fields are required');
       return false;
     }
 

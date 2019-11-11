@@ -5,7 +5,7 @@
 /* eslint-disable no-undef */
 const handleError = (message) => {
   $('#errorMessage').text(message);
-  $('#domoMessage').animate({ width: 'toggle' }, 350);
+  $('#errorModal').modal();
 };
 
 const sendAjax = (action, data) => {
@@ -16,7 +16,7 @@ const sendAjax = (action, data) => {
     data: data,
     dataType: 'json',
     success: (result, status, xhr) => {
-      $('#domoMessage').animate({ width: 'hide' }, 350);
+      $('#errorModal').modal('hide');
 
       window.location = result.redirect;
     },
@@ -32,15 +32,15 @@ $(document).ready(() => {
   $('#signupForm').on('submit', (e) => {
     e.preventDefault();
 
-    $('#domoMessage').animate({ width: 'hide' }, 350);
+    $('#errorModal').modal('hide');
 
     if ($('#user').val() == '' || $('#pass').val() == '' || $('#pass2').val() == '') {
-      handleError('RAWR! All fields are required');
+      handleError('All fields are required');
       return false;
     }
 
     if ($('#pass').val() !== $('#pass2').val()) {
-      handleError('RAWR! Passwords do not match');
+      handleError('Passwords do not match');
       return false;
     }
 
@@ -52,10 +52,10 @@ $(document).ready(() => {
   $('#loginForm').on('submit', (e) => {
     e.preventDefault();
 
-    $('#domoMessage').animate({ width: 'hide' }, 350);
+    $('#errorModal').modal('hide');
 
     if ($('#user').val() == '' || $('#pass').val() == '') {
-      handleError('RAWR! Username or password is empty');
+      handleError('Username or password is empty');
       return false;
     }
 
@@ -67,10 +67,10 @@ $(document).ready(() => {
   $('#domoForm').on('submit', (e) => {
     e.preventDefault();
 
-    $('#domoMessage').animate({ width: 'hide' }, 350);
+    $('#errorModal').modal('hide');
 
     if ($('#domoName').val() == '' || $('#domoAge').val() == '') {
-      handleError('RAWR! All fields are required');
+      handleError('All fields are required');
       return false;
     }
 
