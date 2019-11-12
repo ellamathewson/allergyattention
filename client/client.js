@@ -68,6 +68,7 @@ $(document).ready(() => {
     e.preventDefault();
 
     $('#errorModal').modal('hide');
+    console.log(`test${$('#reactionLevel').val()}`);
 
     if ($('#domoName').val() == '' || $('#domoAge').val() == '') {
       handleError('All fields are required');

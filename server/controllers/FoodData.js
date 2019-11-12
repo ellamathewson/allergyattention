@@ -19,6 +19,7 @@ const makePost = (req, res) => {
   if (!req.body.name || !req.body.age) {
     return res.status(400).json({ error: 'All fields are required' });
   }
+  console.log(req.body.level);
 
   const domoData = {
     name: req.body.name,

@@ -25,7 +25,7 @@
 <div class="topnav" id="myTopnav">
   <a id="title">Allergy Attention</a>
   <a href="/login" class="active">Home</a>
-  <a href="#about">About</a>
+  <a href="#account">Account</a>
   <a href="/logout">Logout</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <img class="hamburger" src="/assets/img/menu.png">
@@ -44,7 +44,7 @@
           <form id="domoForm" name="domoForm" action="/maker" method="POST" class="domoForm">
             <input class="textBox add" id="domoName" type="text" name="name" placeholder="Meal / Food Name" />
             <input class="textBox add" id="domoAge" type="text" name="age" placeholder="List Ingredients w/ commas" />
-            <select class="selectBox">
+            <select class="selectBox" id="reactionLevel">
               <option selected="selected" disabled="disabled">Rate the reaction:</option>
               <option value="urgentCare">Urgent Care</option>
               <option value="painful">Painful</option>
@@ -102,7 +102,7 @@
           <div class="card-body">
             <h2 class="card-title">{{this.name}}</h2>
             <p class="card-text">{{this.age}}</p>
-            <p class="card-text">{{this.level}}</p>
+            <p class="card-text">Reaction: {{this.level}}</p>
           </div>
           <div class="card-footer text-muted">
             {{this.date}}
