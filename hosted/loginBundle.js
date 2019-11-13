@@ -65,6 +65,7 @@ $(document).ready(function () {
   $('#domoForm').on('submit', function (e) {
     e.preventDefault();
     $('#errorModal').modal('hide');
+    console.log("test".concat($('#reactionLevel').val()));
 
     if ($('#domoName').val() == '' || $('#domoAge').val() == '') {
       handleError('All fields are required');

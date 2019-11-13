@@ -43,8 +43,8 @@
          <div>
           <form id="domoForm" name="domoForm" action="/maker" method="POST" class="domoForm">
             <input class="textBox add" id="domoName" type="text" name="name" placeholder="Meal / Food Name" />
-            <input class="textBox add" id="domoAge" type="text" name="age" placeholder="List Ingredients w/ commas" />
-            <select class="selectBox" id="reactionLevel">
+            <input class="textBox add" id="domoAge" type="text" name="ingredients" placeholder="List Ingredients w/ commas" />
+            <select class="selectBox" id="reactionLevel" name="level">
               <option selected="selected" disabled="disabled">Rate the reaction:</option>
               <option value="urgentCare">Urgent Care</option>
               <option value="painful">Painful</option>
@@ -101,7 +101,7 @@
           {{!-- <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> --}}
           <div class="card-body">
             <h2 class="card-title">{{this.name}}</h2>
-            <p class="card-text">{{this.age}}</p>
+            <p class="card-text">{{this.Ingredients}}</p>
             <p class="card-text">Reaction: {{this.level}}</p>
           </div>
           <div class="card-footer text-muted">

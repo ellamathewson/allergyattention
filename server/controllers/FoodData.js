@@ -16,14 +16,14 @@ const makerPage = (req, res) => {
 };
 
 const makePost = (req, res) => {
-  if (!req.body.name || !req.body.age) {
+  if (!req.body.name || !req.body.ingredients) {
     return res.status(400).json({ error: 'All fields are required' });
   }
   console.log(req.body.level);
 
   const domoData = {
     name: req.body.name,
-    age: req.body.age,
+    ingredients: req.body.ingredients,
     level: req.body.level,
     date: req.body.date,
     owner: req.session.account._id,
@@ -38,7 +38,7 @@ const makePost = (req, res) => {
   dataPromise.catch((err) => {
     console.log(err);
     if (err.code === 11000) {
-      return res.status(400).json({ error: 'Domo already exists' });
+      return res.status(400).json({ error: 'Food already exists' });
     }
 
     return res.status(400).json({ error: 'An error occured' });
