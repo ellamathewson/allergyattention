@@ -33,7 +33,7 @@ const DataSchema = new mongoose.Schema({
   level: {
     type: String,
     default: 'No Reaction',
-    // required: true,
+    required: true,
   },
 
   date: {

@@ -46,10 +46,10 @@
             <input class="textBox add" id="domoAge" type="text" name="ingredients" placeholder="List Ingredients w/ commas" />
             <select class="selectBox" id="reactionLevel" name="level">
               <option selected="selected" disabled="disabled">Rate the reaction:</option>
-              <option value="urgentCare">Urgent Care</option>
-              <option value="painful">Painful</option>
-              <option value="mildDiscomfort">Mild Discomfort</option>
-              <option value="noPain">No Pain</option>
+              <option value="Urgent Care">Urgent Care</option>
+              <option value="Painful">Painful</option>
+              <option value="Mild Discomfort">Mild Discomfort</option>
+              <option value="No Pain">No Pain</option>
             </select>
             <input type="hidden" name="_csrf" value={{csrfToken}} />
             <input class="formSubmit" type="submit" value="Add" />
@@ -101,7 +101,7 @@
           {{!-- <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> --}}
           <div class="card-body">
             <h2 class="card-title">{{this.name}}</h2>
-            <p class="card-text">{{this.Ingredients}}</p>
+            <p class="card-text">{{this.ingredients}}</p>
             <p class="card-text">Reaction: {{this.level}}</p>
           </div>
           <div class="card-footer text-muted">
