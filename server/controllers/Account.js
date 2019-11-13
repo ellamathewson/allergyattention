@@ -13,6 +13,10 @@ const signupPage = (req, res) => {
   res.render('signup', { csrfToken: req.csrfToken() });
 };
 
+const accountPage = (req, res) => {
+  res.render('account', { csrfToken: req.csrfToken() });
+};
+
 const logout = (req, res) => {
   // removes a user's session
   req.session.destroy();
@@ -85,8 +89,15 @@ const signup = (request, response) => {
   });
 };
 
+const changePassword = (request, response) => {
+  const req = request;
+  const res = response;
+};
+
 module.exports.loginPage = loginPage;
 module.exports.login = login;
 module.exports.logout = logout;
 module.exports.signupPage = signupPage;
 module.exports.signup = signup;
+module.exports.accountPage = accountPage;
+module.exports.changePassword = changePassword;
