@@ -15,6 +15,16 @@ const makerPage = (req, res) => {
   });
 };
 
+const dataPage = (req, res) => {
+  Data.DataModel.findByOwner(req.session.account._id, (err, docs) => {
+    if (err) {
+      console.log(err);
+      return res.status(400).json({ error: 'An error occured' });
+    }
+    return res.render('display', { csrfToken: req.csrfToken(), foodData: docs });
+  });
+};
+
 const makePost = (req, res) => {
   if (!req.body.name || !req.body.ingredients) {
     return res.status(400).json({ error: 'All fields are required' });
@@ -48,4 +58,5 @@ const makePost = (req, res) => {
 };
 
 module.exports.makerPage = makerPage;
+module.exports.dataPage = dataPage;
 module.exports.make = makePost;

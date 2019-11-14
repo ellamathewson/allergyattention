@@ -22,6 +22,8 @@ const router = (app) => {
   app.get('/account', mid.requiresLogin, controllers.Account.accountPage);
   // app.post('/account', mid.requiresLogin, controllers.Account.changePassword);
 
+  app.get('/data', mid.requiresLogin, controllers.Data.dataPage);
+
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
 };
 
