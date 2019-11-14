@@ -66,7 +66,7 @@ const signup = (request, response) => {
 
   // makes sure the passwords match
   if (req.body.pass !== req.body.pass2) {
-    return res.status(400).json({ error: 'RAWR! Passwords do not match' });
+    return res.status(400).json({ error: 'Passwords do not match' });
   }
 
   // creates account
@@ -105,7 +105,10 @@ const accountPage = (req, res) => {
       console.log(err);
       return res.status(400).json({ error: 'An error occured' });
     }
-    return res.render('account', { csrfToken: req.csrfToken(), userInfo: docs });
+    return res.render('account', {
+      csrfToken: req.csrfToken(),
+      userInfo: req.session.account,
+    });
   });
   // res.render('account', { csrfToken: req.csrfToken() });
 };
