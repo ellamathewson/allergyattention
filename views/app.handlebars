@@ -61,12 +61,12 @@
         <div class="search">
           <h3>Search</h3>
           <div class="searchBar">
-            <input type="text" class="form-control" placeholder="Search for...">
-              <button class="formSubmit" type="button">Go</button>
+            <input type="text" class="form-control" id="searchInput" placeholder="Search for...">
+              <button class="formSubmit" type="button" onclick="searchData()">Go</button>
           </div>
         </div>
 
-      <!-- Categories Widget -->
+      <!-- Categories Widget 
         <div class="sort">
           <h3>Categories</h3>
           <div class="pickSort">
@@ -85,7 +85,7 @@
               </li>
             </ul>
         </div>
-    </div>  
+    </div>  -->
   </div>  
 
     <div class="main">
@@ -93,6 +93,7 @@
     <div id="posts">
       <h1>Allergy Attention</h1>
       <!-- Blog Post -->
+      <h4 class="tag">Tag</h4>
       <section id="domos">
         <div class="domo">
           {{#if foodData}}
@@ -145,6 +146,38 @@
     </div>
     </div>
   </div>
+
+  <script>
+    /* Handlebars.registerHelper('json', function (content) {
+      return JSON.stringify(content); 
+    }); 
+    
+    if title.innerHTML == input {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+    
+    */
+
+    const searchData = () => {
+        let input = document.getElementById("searchInput").value;
+        console.log(input);
+        let cardElements = document.querySelectorAll(".card");
+        cardElements.forEach(card => {
+          let title = card.querySelector("h2").innerHTML;
+
+          if (title == input) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+      } 
+    
+
+  </script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/assets/bundle.js"></script>
