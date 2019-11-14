@@ -38,11 +38,15 @@
 <h1>Settings</h1>
   <div id="account">
     {{#if userInfo}}
-    <h2>{{userInfo.username}}</h2>
-    <h2>{{userInfo.password}}</h2>
+    <h2>Username: {{userInfo.username}}</h2>
+    <h2>Created Date:{{userInfo.createdDate}}</h2>
     {{/if}}
   </div>
-    <div id="changePassForm">
+
+  <button class="formSubmit" id="openForm" onclick="toggleForm()">Change Password</button>
+  
+  <div id="changePassForm">
+    <a class="icon"><img class="hamburger" src="/assets/img/close.png"></a>
     <form id="changePassword" name="changePassword" action="/changePassword" method="POST" class="mealForm">
       <input class="textBox add" id="oldPass" type="text" name="oldPassword" placeholder="Old Password" />
       <input class="textBox add" id="newPass1" type="text" name="newPass1" placeholder="New Password" />
@@ -56,6 +60,23 @@
 
   </content>
     <!-- /.container -->
+
+    <script>
+      const toggleForm = () => {
+        let form = document.querySelector("#changePassForm");
+        let formButton = document.querySelector("#openForm");
+
+        if(form.style.display == "none") {
+          form.style.display = "block";
+          formButton.style.display = "none"
+        } else {
+          form.style.display = "none";
+          formButton.style.display = "block";
+        }
+
+      };
+
+    </script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/assets/bundle.js"></script>
