@@ -64,18 +64,18 @@ $(document).ready(() => {
     return false;
   });
 
-  $('#domoForm').on('submit', (e) => {
+  $('#mealForm').on('submit', (e) => {
     e.preventDefault();
 
     $('#errorModal').modal('hide');
     console.log(`test${$('#reactionLevel').val()}`);
 
-    if ($('#domoName').val() == '' || $('#domoAge').val() == '') {
+    if ($('#mealName').val() == '' || $('#mealIngredients').val() == '') {
       handleError('All fields are required');
       return false;
     }
 
-    sendAjax($('#domoForm').attr('action'), $('#domoForm').serialize());
+    sendAjax($('#mealForm').attr('action'), $('#mealForm').serialize());
 
     return false;
   });

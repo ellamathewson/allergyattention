@@ -41,9 +41,9 @@
        <div class="addForm">
        <h3>Add Food</h3>
          <div>
-          <form id="domoForm" name="domoForm" action="/maker" method="POST" class="domoForm">
-            <input class="textBox add" id="domoName" type="text" name="name" placeholder="Meal / Food Name" />
-            <input class="textBox add" id="domoAge" type="text" name="ingredients" placeholder="List Ingredients w/ commas" />
+          <form id="mealForm" name="mealForm" action="/maker" method="POST" class="mealForm">
+            <input class="textBox add" id="mealName" type="text" name="name" placeholder="Meal / Food Name" />
+            <input class="textBox add" id="mealIngredients" type="text" name="ingredients" placeholder="List Ingredients w/ commas" />
             <select class="selectBox" id="reactionLevel" name="level">
               <option selected="selected" disabled="disabled">Rate the reaction:</option>
               <option value="Urgent Care">Urgent Care</option>
@@ -97,8 +97,8 @@
         <h5>Tag</h5>
       </div>
       
-      <section id="domos">
-        <div class="domo">
+      <section id="meals">
+        <div class="meal">
           {{#if foodData}}
           {{#each foodData}}
         <div class="card mb-4">

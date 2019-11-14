@@ -62,17 +62,17 @@ $(document).ready(function () {
     sendAjax($('#loginForm').attr('action'), $('#loginForm').serialize());
     return false;
   });
-  $('#domoForm').on('submit', function (e) {
+  $('#mealForm').on('submit', function (e) {
     e.preventDefault();
     $('#errorModal').modal('hide');
     console.log("test".concat($('#reactionLevel').val()));
 
-    if ($('#domoName').val() == '' || $('#domoAge').val() == '') {
+    if ($('#mealName').val() == '' || $('#mealIngredients').val() == '') {
       handleError('All fields are required');
       return false;
     }
 
-    sendAjax($('#domoForm').attr('action'), $('#domoForm').serialize());
+    sendAjax($('#mealForm').attr('action'), $('#mealForm').serialize());
     return false;
   });
 });
