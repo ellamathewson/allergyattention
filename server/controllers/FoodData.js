@@ -33,7 +33,7 @@ const makePost = (req, res) => {
 
   const dataPromise = newDomo.save();
 
-  dataPromise.then(() => res.json({ redirect: '/maker' }));
+  dataPromise.then(() => res.redirect('/maker'));
 
   dataPromise.catch((err) => {
     console.log(err);
