@@ -34,11 +34,27 @@
 </nav>
 
   <!-- Page Content -->
-  <content>
+<content class="accountPage">
+<h1>Settings</h1>
+  <div id="account">
+    {{#if userInfo}}
+    <h2>{{this.username}}</h2>
+    <h2>{{this.password}}</h2>
+    {{/if}}
+  </div>
+    <div id="changePassForm">
+    <form id="changePassword" name="changePassword" action="/changePassword" method="POST" class="domoForm">
+      <input class="textBox add" id="oldPass" type="text" name="oldPassword" placeholder="Old Password" />
+      <input class="textBox add" id="newPass1" type="text" name="newPass1" placeholder="New Password" />
+      <input class="textBox add" id="newPass2" type="text" name="newPass2" placeholder="Repeat New Password" />
+      <input type="hidden" name="_csrf" value={{csrfToken}} />
+      <input class="formSubmit" type="submit" value="Change Password" />
+    </form>
+  </div>
 
-    
-    
-  <content>
+
+
+  </content>
     <!-- /.container -->
 
     <!-- Bootstrap core JavaScript -->
