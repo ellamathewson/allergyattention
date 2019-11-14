@@ -93,7 +93,7 @@
     <div id="posts">
       <h1>Allergy Attention</h1>
       <!-- Blog Post -->
-      <div class="tag">
+      <div class="tag" onclick="removeSearch()">
         <h5>Tag</h5>
       </div>
       
@@ -187,9 +187,18 @@
             card.style.display = "none";
           }
         });
-      } 
-    
+    } 
 
+    const removeSearch = () => {
+      let tag = document.querySelector(".tag");
+
+      let cardElements = document.querySelectorAll(".card");
+
+        cardElements.forEach(card => {
+          card.style.display = "block";
+          tag.style.display = "none";
+        });
+    }
   </script>
 
     <!-- Bootstrap core JavaScript -->
