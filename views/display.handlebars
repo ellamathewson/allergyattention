@@ -17,6 +17,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 </head>
 
 <body>
@@ -62,8 +63,13 @@
   </div>  
 
     <div class="main">
+        <canvas id="myChart"></canvas>
     <!-- Blog Entries Column -->
-   
+   {{#if displayFood}}
+   {{#each displayFood}}
+         <h2>{{this.level}}</h2>
+   {{/each}}
+   {{/if}}
 </div>  
 
   </content>
@@ -88,17 +94,25 @@
   </div>
 
   <script>
-    /* Handlebars.registerHelper('json', function (content) {
-      return JSON.stringify(content); 
-    }); 
-    
-    if title.innerHTML == input {
-            card.style.display = "block";
-          } else {
-            card.style.display = "none";
-          }
-    
-    */
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+    var myDoughnutChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+            data: [10, 20, 30, 2]
+            }],
+
+            // These labels appear in the legend and in the tooltips when hovering different arcs
+            labels: [
+            'No Pain',
+            'Mild Discomfort',
+            'Pain',
+            'Urgent Care'
+            ]
+        },
+        options: {}
+    });
 
     const searchData = () => {
       // grabs searchbar input

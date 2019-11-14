@@ -21,7 +21,10 @@ const dataPage = (req, res) => {
       console.log(err);
       return res.status(400).json({ error: 'An error occured' });
     }
-    return res.render('display', { csrfToken: req.csrfToken(), foodData: docs });
+    return res.render('display', {
+      csrfToken: req.csrfToken(),
+      displayFood: docs,
+    });
   });
 };
 
