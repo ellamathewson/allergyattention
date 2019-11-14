@@ -114,7 +114,7 @@
         </div>
           {{/each}}
           {{else}}
-          <h3 class="emptyDomo">No food added</h3>          
+          <h3 class="noData">No food added</h3>          
         {{/if}}
         </div>
       </section>
@@ -124,27 +124,19 @@
   </content>
   <!-- /.container -->
 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-
   <div id="errorModal">
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="searchEmpty" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Error</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <h5 class="modal-title" id="searchEmptyLabel">Error: No results for ${input} found</h5>
         </div>
-        <div class="modal-body">
+        {{!-- <div class="modal-body">
           <h3><span id="errorMessage"></span></h3>
-        </div>
+        </div>--}}
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Okay</button>
-        </div>
+          <button type="button" class="btn btn-secondary" onclick="removeSearch()">Okay</button>
+        </div> 
       </div>
     </div>
     </div>
@@ -173,12 +165,15 @@
         // grabs all the cards on screen
         let cardElements = document.querySelectorAll(".card");
 
+        let itemsDisplaying = false;
+
         //for each card,
         cardElements.forEach(card => {
           //if title matches input, display and show tag
           let title = card.querySelector("h2").innerHTML;
 
           if (title == input) {
+            itemsDisplaying = true;
             card.style.display = "block";
             tag.querySelector("h5").innerHTML = input;
             tag.style.display = "block";
@@ -187,9 +182,15 @@
             card.style.display = "none";
           }
         });
+
+        if (itemsDisplaying == false) {
+            console.log("nothing on scren");
+            $('#searchEmpty').modal('show');
+          }
     } 
 
     const removeSearch = () => {
+      $('#searchEmpty').modal('hide');
       let tag = document.querySelector(".tag");
 
       let cardElements = document.querySelectorAll(".card");
