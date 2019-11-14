@@ -93,7 +93,10 @@
     <div id="posts">
       <h1>Allergy Attention</h1>
       <!-- Blog Post -->
-      <h4 class="tag">Tag</h4>
+      <div class="tag">
+        <h5>Tag</h5>
+      </div>
+      
       <section id="domos">
         <div class="domo">
           {{#if foodData}}
@@ -161,19 +164,29 @@
     */
 
     const searchData = () => {
+      // grabs searchbar input
         let input = document.getElementById("searchInput").value;
-        console.log(input);
+
+        //grabs tag element
+        let tag = document.querySelector(".tag");
+
+        // grabs all the cards on screen
         let cardElements = document.querySelectorAll(".card");
+
+        //for each card,
         cardElements.forEach(card => {
+          //if title matches input, display and show tag
           let title = card.querySelector("h2").innerHTML;
 
           if (title == input) {
             card.style.display = "block";
+            tag.querySelector("h5").innerHTML = input;
+            tag.style.display = "block";
+          //if not, set the display to none
           } else {
             card.style.display = "none";
           }
         });
-
       } 
     
 

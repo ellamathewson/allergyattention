@@ -72,6 +72,13 @@ a {
   .topnav a:after {
       text-decoration: none;
   }
+
+  #title:hover {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    cursor: default;
+  }
   
   .topnav a:hover {
     background-color: white;
@@ -237,6 +244,22 @@ a {
   li:hover {
       color: #201E2A;
   }
+
+  .tag {
+    background-color: lightgray;
+    color: white;
+    width: 10vw;
+    height: 4vh;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    display: none;
+    text-align: center;
+    padding-top: 0.5px;
+  }
+
+.tag:hover {
+  background-color: black;
+}
 
   /* 
   
