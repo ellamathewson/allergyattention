@@ -113,32 +113,37 @@ const accountPage = (req, res) => {
   // res.render('account', { csrfToken: req.csrfToken() });
 };
 
-/* const changePassword = (request, response) => {
+const changePassword = (request, response) => {
   const req = request;
   const res = response;
 
-  Account.findById(req.ression.account._id, (err, doc) => {
-    if (err) {
-      return res.json(err);
-    }
-    if (!doc) {
-      return res.json({ error: 'No Document found' });
-    }
-  });
+  // creates account
+  Account.AccountModel.authenticate(
+    req.session.account.username,
+    req.body.oldPassword,
+    // eslint-disable-next-line consistent-return
+    (err, doc) => {
+      if (err) {
+        return res.status(400).json({ err });
+      }
 
-  // Account.findById(req.session.account._id, (err, doc) => {
-  //   if (err) { res.json(err); }
-  //   if (!doc) {
-  //     res.json({ error: 'No document found' });
+      if (!doc) {
+        return res.status(400).json({ err: 'invalid credentials' });
+      }
 
-  //     const account = doc;
-  //     savePromise.then(() => {
-  //       // send back response
-  //     });
-  //     savePromise.catch((err) => res.json(err));
-  //   }
-  // });
-}; */
+      Account.AccountModel.generateHash(req.body.newPass1, (salt, hash) => {
+        Account.AccountModel.updateOne({ username: req.session.account.username },
+          { salt, password: hash }, (error) => {
+            if (err) {
+              return res.status(400).json({ error });
+            }
+
+            return res.json({ message: 'password changed' });
+          });
+      });
+    },
+  );
+};
 
 module.exports.loginPage = loginPage;
 module.exports.login = login;
@@ -146,4 +151,4 @@ module.exports.logout = logout;
 module.exports.signupPage = signupPage;
 module.exports.signup = signup;
 module.exports.accountPage = accountPage;
-// module.exports.changePassword = changePassword;
+module.exports.changePassword = changePassword;

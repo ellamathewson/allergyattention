@@ -20,7 +20,7 @@ const router = (app) => {
   app.post('/maker', mid.requiresLogin, controllers.Data.make);
 
   app.get('/account', mid.requiresLogin, controllers.Account.accountPage);
-  // app.post('/account', mid.requiresLogin, controllers.Account.changePassword);
+  app.post('/changePassword', mid.requiresLogin, controllers.Account.changePassword);
 
   app.get('/data', mid.requiresLogin, controllers.Data.dataPage);
 
