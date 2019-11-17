@@ -10,8 +10,9 @@
 
 /* eslint-disable no-undef */
 var handleError = function handleError(message) {
-  $('#errorMessage').text(message);
-  $('#errorModal').modal();
+  console.log('in handle error');
+  $('#errorMessageLabel').innerHTML = message;
+  $('#errorMessage').modal('show');
 };
 
 var sendAjax = function sendAjax(action, data) {
@@ -35,7 +36,6 @@ var sendAjax = function sendAjax(action, data) {
 $(document).ready(function () {
   $('#signupForm').on('submit', function (e) {
     e.preventDefault();
-    $('#errorModal').modal('hide');
 
     if ($('#user').val() == '' || $('#pass').val() == '' || $('#pass2').val() == '') {
       handleError('All fields are required');
@@ -52,7 +52,6 @@ $(document).ready(function () {
   });
   $('#loginForm').on('submit', function (e) {
     e.preventDefault();
-    $('#errorModal').modal('hide');
 
     if ($('#user').val() == '' || $('#pass').val() == '') {
       handleError('Username or password is empty');

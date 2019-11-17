@@ -4,8 +4,9 @@
 /* eslint-disable object-shorthand */
 /* eslint-disable no-undef */
 const handleError = (message) => {
-  $('#errorMessage').text(message);
-  $('#errorModal').modal();
+  console.log('in handle error');
+  $('#errorMessageLabel').innerHTML = message;
+  $('#errorMessage').modal('show');
 };
 
 const sendAjax = (action, data) => {
@@ -32,8 +33,6 @@ $(document).ready(() => {
   $('#signupForm').on('submit', (e) => {
     e.preventDefault();
 
-    $('#errorModal').modal('hide');
-
     if ($('#user').val() == '' || $('#pass').val() == '' || $('#pass2').val() == '') {
       handleError('All fields are required');
       return false;
@@ -52,8 +51,6 @@ $(document).ready(() => {
   $('#loginForm').on('submit', (e) => {
     e.preventDefault();
 
-    $('#errorModal').modal('hide');
-
     if ($('#user').val() == '' || $('#pass').val() == '') {
       handleError('Username or password is empty');
       return false;
@@ -67,7 +64,6 @@ $(document).ready(() => {
   $('#mealForm').on('submit', (e) => {
     e.preventDefault();
 
-    $('#errorModal').modal('hide');
     console.log(`test${$('#reactionLevel').val()}`);
 
     if ($('#mealName').val() == '' || $('#mealIngredients').val() == '') {

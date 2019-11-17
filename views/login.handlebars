@@ -33,7 +33,6 @@
 </div>
 </nav>
 
-
   <!-- Page Content -->
   <content>
     <!-- Sidebar Widgets Column -->
@@ -46,7 +45,7 @@
           <input class="textBox" id="user" type="text" name="username" placeholder="Username" />
           <input class="textBox" id="pass" type="password" name="pass" placeholder="Password" />
           <input type="hidden" name="_csrf" value={{csrfToken}} />
-          <input class="formSubmit" type="submit" value="Sign In" />
+          <input class="formSubmit" type="submit" id="signinButton" value="Sign In" />
         </form>
       </div>
     </div>
@@ -56,13 +55,23 @@
     <content>
     <!-- /.container -->
     
-    {{!-- <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; 2019</p>
+    <div id="errorModal">
+    <div class="modal fade" id="errorMessage" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="errorMessageLabel">Error</h5>
+        </div>
+        {{!-- <div class="modal-body">
+          <h3><span id="errorMessage"></span></h3>
+        </div>--}}
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="removeSearch()">Okay</button>
+        </div> 
       </div>
-      <!-- /.container -->
-    </footer> --}}
+    </div>
+    </div>
+  </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/assets/bundle.js"></script>
