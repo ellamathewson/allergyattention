@@ -274,7 +274,19 @@ a {
     margin: 0 10vw;
   }
   
+
+  /* 
   
+    Error Page
+  
+  */
+  .errorPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   /* 
   
     Error Message
