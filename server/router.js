@@ -23,8 +23,13 @@ const router = (app) => {
   app.post('/changePassword', mid.requiresLogin, controllers.Account.changePassword);
 
   app.get('/data', mid.requiresLogin, controllers.Data.dataPage);
+  app.get('/error', mid.requiresLogin, controllers.Account.errorPage);
 
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
+  /*
+    Figured this out with the help of https://stackoverflow.com/questions/6528876/how-to-redirect-404-errors-to-a-page-in-expressjs
+  */
+  app.get('*', mid.requiresLogin, controllers.Account.errorPage);
 };
 
 module.exports = router;
