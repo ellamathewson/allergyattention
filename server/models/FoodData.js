@@ -61,12 +61,21 @@ DataSchema.statics.toAPI = (doc) => ({
 
 });
 
-DataSchema.statics.findByOwner = (ownerId, callback) => {
+DataSchema.statics.findByMeal = (ownerId, callback) => {
   const search = {
     owner: convertId(ownerId),
   };
 
   return DataModel.find(search).select('name ingredients level date').exec(callback);
+};
+
+DataSchema.statics.findByName = (name, callback) => {
+  console.log(name);
+  const search = {
+    name,
+  };
+
+  return DataModel.find(search).select('name ingredients').exec(callback);
 };
 
 DataModel = mongoose.model('Domo', DataSchema);

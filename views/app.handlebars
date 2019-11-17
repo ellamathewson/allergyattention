@@ -61,32 +61,13 @@
       <!-- Search Widget -->
         <div class="search">
           <h3>Search</h3>
-          <div class="searchBar">
-            <input type="text" class="form-control" id="searchInput" placeholder="Search for...">
-              <button class="formSubmit" type="button" onclick="searchData()">Go</button>
-          </div>
+            <form class="searchBar" name="searchForm" action="/searchFood" method="GET">
+              <input type="text" name="name" class="form-control" id="searchInput" placeholder="Search for...">
+              <input class="formSubmit" type="submit" value="Go">
+            </form>
+            {{!-- <input type="text" class="form-control" id="searchInput" placeholder="Search for...">
+              <button class="formSubmit" type="button" onclick="searchData()">Go</button> --}}
         </div>
-
-      <!-- Categories Widget 
-        <div class="sort">
-          <h3>Categories</h3>
-          <div class="pickSort">
-            <ul class="list-unstyled">
-              <li>
-                <a href="#">Urgent Care</a>
-              </li>
-              <li>
-                <a href="#">Painful</a>
-              </li>
-              <li>
-                <a href="#">Mild Discomfort</a>
-              </li>
-              <li>
-                <a href="#">No Pain</a>
-              </li>
-            </ul>
-        </div>
-    </div>  -->
   </div>  
 
     <div class="main">

@@ -19,11 +19,14 @@ const router = (app) => {
   app.get('/maker', mid.requiresLogin, controllers.Data.makerPage);
   app.post('/maker', mid.requiresLogin, controllers.Data.make);
 
+  app.get('/searchFood', mid.requiresLogin, controllers.Data.searchFood);
+
   app.get('/account', mid.requiresLogin, controllers.Account.accountPage);
   app.post('/changePassword', mid.requiresLogin, controllers.Account.changePassword);
 
   app.get('/data', mid.requiresLogin, controllers.Data.dataPage);
   app.get('/error', mid.requiresLogin, controllers.Account.errorPage);
+
 
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
   /*
