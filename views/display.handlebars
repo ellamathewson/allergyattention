@@ -42,123 +42,81 @@
     <div class="sidebar">
       <!-- Categories Widget -->
         <div class="sort">
-          <h3>Categories</h3>
+          <h3>Ingredient List:</h3>
           <div class="pickSort">
-            <ul class="list-unstyled">
-              <li>
-                <a href="#">Urgent Care</a>
-              </li>
-              <li>
-                <a href="#">Painful</a>
-              </li>
-              <li>
-                <a href="#">Mild Discomfort</a>
-              </li>
-              <li>
-                <a href="#">No Pain</a>
-              </li>
-            </ul>
+            {{#if displayFood}}
+            {{#each displayFood}}
+              <h2>{{this.level}}</h2>
+              <h4>{{this.ingredients}}</h4>
+            {{/each}}
+            {{/if}}
         </div>
     </div>
   </div>  
 
     <div class="main">
-        <canvas id="myChart"></canvas>
+      <h2>Data:</h2>
+    <canvas id="myChart"></canvas>
     <!-- Blog Entries Column -->
-   {{#if displayFood}}
-   {{#each displayFood}}
-         <h2>{{this.level}}</h2>
-   {{/each}}
-   {{/if}}
+   
 </div>  
 
   </content>
   <!-- /.container -->
 
-  <div id="errorModal">
-    <div class="modal fade" id="searchEmpty" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="searchEmptyLabel">Error: No results for ${input} found</h5>
-        </div>
-        {{!-- <div class="modal-body">
-          <h3><span id="errorMessage"></span></h3>
-        </div>--}}
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="removeSearch()">Okay</button>
-        </div> 
-      </div>
-    </div>
-    </div>
-  </div>
-
   <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
+    let ctx = document.getElementById('myChart').getContext('2d');
 
-    var myDoughnutChart = new Chart(ctx, {
+    const userData = document.querySelectorAll('h2');
+    
+    let noPain = 0;
+    let mildDis = 0;
+    let painful = 0;
+    let urgent = 0;
+    console.log(userData);
+
+    userData.forEach((item) => {
+      console.log(item.innerHTML);
+        switch(item.innerHTML) {
+          case "Urgent Care":
+            urgent += 1;
+            break;
+          case "Painful":
+            painful += 1;
+            break;
+          case "Mild Discomfort":
+            mildDis += 1;
+            break;
+          case "No Pain": 
+            noPain += 1;
+            break;
+          default:
+            break;
+        }
+    });
+
+    let allData = [urgent, painful, mildDis, noPain];
+
+    let myDoughnutChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
             datasets: [{
-            data: [10, 20, 30, 2]
+            label: 'Data',
+            data: allData,
+            backgroundColor: ["#cc3300", "#ff9966", "#ffcc00", "#99cc33"],
             }],
 
             // These labels appear in the legend and in the tooltips when hovering different arcs
             labels: [
-            'No Pain',
+            'Urgent',
+            'Painful',
             'Mild Discomfort',
-            'Pain',
-            'Urgent Care'
+            'No Pain'
             ]
         },
         options: {}
     });
 
-    const searchData = () => {
-      // grabs searchbar input
-        let input = document.getElementById("searchInput").value;
-
-        //grabs tag element
-        let tag = document.querySelector(".tag");
-
-        // grabs all the cards on screen
-        let cardElements = document.querySelectorAll(".card");
-
-        let itemsDisplaying = false;
-
-        //for each card,
-        cardElements.forEach(card => {
-          //if title matches input, display and show tag
-          let title = card.querySelector("h2").innerHTML;
-
-          if (title == input) {
-            itemsDisplaying = true;
-            card.style.display = "block";
-            tag.querySelector("h5").innerHTML = input;
-            tag.style.display = "block";
-          //if not, set the display to none
-          } else {
-            card.style.display = "none";
-          }
-        });
-
-        if (itemsDisplaying == false) {
-            console.log("nothing on scren");
-            $('#searchEmpty').modal('show');
-          }
-    } 
-
-    const removeSearch = () => {
-      $('#searchEmpty').modal('hide');
-      let tag = document.querySelector(".tag");
-
-      let cardElements = document.querySelectorAll(".card");
-
-        cardElements.forEach(card => {
-          card.style.display = "block";
-          tag.style.display = "none";
-        });
-    }
   </script>
 
     <!-- Bootstrap core JavaScript -->
