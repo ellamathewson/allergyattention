@@ -40,18 +40,15 @@
   <div id="account">
     {{#if userInfo}}
     <h2>Username: {{userInfo.username}}</h2>
-    <h2>Created Date:{{userInfo.createdDate}}</h2>
     {{/if}}
   </div>
-
-  <button class="formSubmit" id="openForm" onclick="toggleForm()">Change Password</button>
-  
+  <br><br>
   <div id="changePassForm">
-    <a class="icon"><img class="hamburger" src="/assets/img/close.png"></a>
     <form id="changePassword" name="changePassword" action="/changePassword" method="POST" class="mealForm">
       <input class="textBox add" id="oldPass" type="text" name="oldPassword" placeholder="Old Password" />
-      <input class="textBox add" id="newPass1" type="text" name="newPass1" placeholder="New Password" />
-      <input class="textBox add" id="newPass2" type="text" name="newPass2" placeholder="Repeat New Password" />
+      <!-- webkit text security from https://stackoverflow.com/questions/1648665/changing-the-symbols-shown-in-a-html-password-field -->
+      <input class="textBox add" id="newPass1" type="text" name="newPass1" style="-webkit-text-security: square" placeholder="New Password" />
+      <input class="textBox add" id="newPass2" type="text" name="newPass2" style="-webkit-text-security: square" placeholder="Repeat New Password" />
       <input type="hidden" name="_csrf" value={{csrfToken}} />
       <input class="formSubmit" type="submit" value="Change Password" />
     </form>
@@ -63,19 +60,7 @@
     <!-- /.container -->
 
     <script>
-      const toggleForm = () => {
-        let form = document.querySelector("#changePassForm");
-        let formButton = document.querySelector("#openForm");
 
-        if(form.style.display == "none") {
-          form.style.display = "block";
-          formButton.style.display = "none"
-        } else {
-          form.style.display = "none";
-          formButton.style.display = "block";
-        }
-
-      };
 
     </script>
 
