@@ -4,9 +4,8 @@
 /* eslint-disable object-shorthand */
 /* eslint-disable no-undef */
 const handleError = (message) => {
-  console.log('in handle error');
   $('#error').text = message;
-  $('#error').fadeIn(300);
+  $('#error').fadeIn(200);
 };
 
 const sendAjax = (action, data) => {
@@ -32,7 +31,7 @@ const sendAjax = (action, data) => {
 $(document).ready(() => {
   $('#signupForm').on('submit', (e) => {
     e.preventDefault();
-    // $('#error').fadeOut(200);
+    $('#error').fadeOut(200);
 
     if ($('#user').val() == '' || $('#pass').val() == '' || $('#pass2').val() == '') {
       handleError('All fields are required');

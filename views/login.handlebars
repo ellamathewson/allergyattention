@@ -44,9 +44,9 @@
           <input class="textBox" id="user" type="text" name="username" placeholder="Username" />
           <input class="textBox" id="pass" type="password" name="pass" placeholder="Password" />
           <input type="hidden" name="_csrf" value={{csrfToken}} />
-          <input class="formSubmit" type="submit" id="signinButton" value="Sign In" />
+          <button class="formSubmit" type="submit" id="signinButton">Sign In </button>
+          <div class="alert alert-danger" role="alert" id="error"> Error: Username and Password required </div>
         </form>
-          <div class="alert alert-danger" role="alert" id="error"> Error </div>
       </div>
     </div>
 

@@ -46,7 +46,7 @@
         <input type="hidden" name="_csrf" value={{csrfToken}} />
         <input class="formSubmit" type="submit" value="Sign Up" />
       </form>
-        <div class="alert alert-danger" role="alert" id="error"> Error </div>
+        <div class="alert alert-danger" role="alert" id="error"> Error: All fields are required </div>
       </div>
     </div>
 
@@ -54,24 +54,6 @@
       <img class="epipenAd" src="/assets/img/secondAd.jpg">
     </content>
     <!-- /.container -->
-
-    <div id="errorModal">
-    <div class="modal fade" id="errorMessage" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="errorMessageLabel">Error</h5>
-        </div>
-        {{!-- <div class="modal-body">
-          <h3><span id="errorMessage"></span></h3>
-        </div>--}}
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="removeSearch()">Okay</button>
-        </div> 
-      </div>
-    </div>
-    </div>
-  </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/assets/bundle.js"></script>

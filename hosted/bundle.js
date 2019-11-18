@@ -10,9 +10,8 @@
 
 /* eslint-disable no-undef */
 var handleError = function handleError(message) {
-  console.log('in handle error');
   $('#error').text = message;
-  $('#error').modal('show');
+  $('#error').fadeIn(300);
 };
 
 var sendAjax = function sendAjax(action, data) {
@@ -35,7 +34,8 @@ var sendAjax = function sendAjax(action, data) {
 
 $(document).ready(function () {
   $('#signupForm').on('submit', function (e) {
-    e.preventDefault(); // $('#error').fadeOut(200);
+    e.preventDefault();
+    $('#error').fadeOut(200);
 
     if ($('#user').val() == '' || $('#pass').val() == '' || $('#pass2').val() == '') {
       handleError('All fields are required');
