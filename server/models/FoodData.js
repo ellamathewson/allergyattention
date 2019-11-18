@@ -15,6 +15,7 @@ const convertId = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
 const setIngredients = (listOfFood) => _.escape(listOfFood).trim();
 
+/* Data schema for meals input to database */
 const DataSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -53,6 +54,7 @@ const DataSchema = new mongoose.Schema({
   },
 });
 
+/* Sets it to API */
 DataSchema.statics.toAPI = (doc) => ({
   name: doc.name,
   ingredients: doc.ingredients,
@@ -61,6 +63,7 @@ DataSchema.statics.toAPI = (doc) => ({
 
 });
 
+/* Function to search API by name */
 DataSchema.statics.findByMeal = (ownerId, callback) => {
   const search = {
     owner: convertId(ownerId),
