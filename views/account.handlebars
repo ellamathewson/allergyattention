@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+  <!-- Bootstrap Template from https://getbootstrap.com/docs/4.0/components/alerts/ -->
 </head>
 
 <body>
@@ -28,7 +28,7 @@
   <a href="/account" class="active">Account</a>
   <a href="/data">Data</a>
   <a href="/logout">Logout</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+  <a href="javascript:void(0);" class="icon" onclick="openHamburgerMenu()">
     <img class="hamburger" src="/assets/img/menu.png">
   </a>
 </div>
@@ -53,21 +53,15 @@
       <input class="formSubmit" type="submit" value="Change Password" />
     </form>
   </div>
-
-
-
   </content>
     <!-- /.container -->
 
-    <script>
-
-
-    </script>
-
     <!-- Bootstrap core JavaScript -->
     <script src="/assets/bundle.js"></script>
+
     <script>
-      function myFunction() {
+      // hamburger menu functionality when screen is smaller
+      function openHamburgerMenu() {
       var x = document.getElementById("myTopnav");
       if (x.className === "topnav") {
         x.className += " responsive";
