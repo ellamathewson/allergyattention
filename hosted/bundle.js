@@ -11,7 +11,7 @@
 /* eslint-disable no-undef */
 var handleError = function handleError(message) {
   $('#error').text = message;
-  $('#error').fadeIn(300);
+  $('#error').fadeIn(200);
 };
 
 var sendAjax = function sendAjax(action, data) {
