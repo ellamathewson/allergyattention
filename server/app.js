@@ -25,6 +25,7 @@ const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
 const dbURL = process.env.MONGODB_URI || 'mongodb://localhost/Maker';
 
+/* Connecting mongoose */
 mongoose.connect(dbURL, (err) => {
   if (err) {
     console.log('Could not connect to the database');
@@ -32,6 +33,7 @@ mongoose.connect(dbURL, (err) => {
   }
 });
 
+/* Connecting redis */
 const client = redis.createClient({
   host: 'redis-16069.c10.us-east-1-2.ec2.cloud.redislabs.com',
   port: 16069,
@@ -46,9 +48,10 @@ if (process.env.REDISCLOUD_URL) {
 // pull in our routes
 const router = require('./router.js');
 
+/* Using express */
 const app = express();
 app.use('/assets', express.static(path.resolve(`${__dirname}/../hosted/`)));
-app.use(favicon(`${__dirname}/../hosted/img/favicon.png`));
+app.use(favicon(`${__dirname}/../hosted/img/peanutFavicon.png`));
 app.disable('x-powered-by');
 app.use(compression());
 app.use(bodyParser.urlencoded({

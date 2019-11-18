@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="Allergy Attention user signup form">
+  <meta name="author" content="Ella Mathewson">
 
   <title>Allergy Attention</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!-- Bootstrap Template from https://getbootstrap.com/docs/4.0/components/alerts/ -->
 </head>
 
 <body>
@@ -25,7 +26,7 @@
   <a id="title">Allergy Attention</a>
   <a href="/login">Login</a>
   <a href="/signup" class="active">Signup</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+  <a href="javascript:void(0);" class="icon" onclick="openHamburgerMenu()">
     <img class="hamburger" src="/assets/img/menu.png">
   </a>
 </div>
@@ -59,7 +60,8 @@
     <script src="/assets/bundle.js"></script>
 
     <script>
-      function myFunction() {
+      // hamburger menu functionality when screen is smaller
+      function openHamburgerMenu() {
       var x = document.getElementById("myTopnav");
       if (x.className === "topnav") {
         x.className += " responsive";

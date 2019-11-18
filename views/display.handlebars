@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!-- Bootstrap Template from https://getbootstrap.com/docs/4.0/components/alerts/ -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 </head>
@@ -29,15 +30,14 @@
   <a href="/account">Account</a>
   <a href="/data" class="active">Data</a>
   <a href="/logout">Logout</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+  <a href="javascript:void(0);" class="icon" onclick="openHamburgerMenu()">
     <img class="hamburger" src="/assets/img/menu.png">
   </a>
 </div>
 </nav>
 
-  <!-- Page Content -->
+<!-- Page Content -->
 <content class="appPage">
-
 <!-- Sidebar Widgets Column -->
     <div class="sidebar">
       <!-- Categories Widget -->
@@ -54,27 +54,30 @@
     </div>
   </div>  
 
+    <!-- Sidebar listing out data -->
     <div class="main">
       <h2>Data:</h2>
     <canvas id="myChart"></canvas>
     <!-- Blog Entries Column -->
-   
 </div>  
-
   </content>
   <!-- /.container -->
 
   <script>
+    // sets up donut chart using chart.js
     let ctx = document.getElementById('myChart').getContext('2d');
 
+    // grabs all names from list on side
     const userData = document.querySelectorAll('h2');
     
+    // category numbers set at 0
     let noPain = 0;
     let mildDis = 0;
     let painful = 0;
     let urgent = 0;
     console.log(userData);
 
+    // adds 1 to each category when listed to display on chart
     userData.forEach((item) => {
       console.log(item.innerHTML);
         switch(item.innerHTML) {
@@ -95,8 +98,10 @@
         }
     });
 
+    // sets up array using data grabbed above
     let allData = [urgent, painful, mildDis, noPain];
 
+    // sets up chart 
     let myDoughnutChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -116,13 +121,14 @@
         },
         options: {}
     });
-
   </script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/assets/bundle.js"></script>
+
     <script>
-      function myFunction() {
+      // hamburger menu functionality when screen is smaller
+      function openHamburgerMenu() {
       var x = document.getElementById("myTopnav");
       if (x.className === "topnav") {
         x.className += " responsive";
