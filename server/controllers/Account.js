@@ -50,7 +50,7 @@ const login = (request, response) => {
     req.session.account = Account.AccountModel.toAPI(account);
 
     // if so, changes to maker page
-    return res.redirect('/maker');
+    return res.json({ redirect: '/maker' });
   });
 };
 
@@ -87,7 +87,7 @@ const signup = (request, response) => {
 
     savePromise.then(() => {
       req.session.account = Account.AccountModel.toAPI(newAccount);
-      return res.redirect('/maker');
+      return res.json({ redirect: '/maker' });
     });
 
     savePromise.catch((err) => {

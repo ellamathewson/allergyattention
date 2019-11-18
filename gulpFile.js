@@ -28,26 +28,13 @@ const sassTask = (done) => {
   done();
 };
 
-const loginBunleTask = (done) => {
-  // grab all the files we want to combine
+const buildTask = (done) => {
   gulp.src(['./client/*.js'])
-    .pipe(concat('loginBundle.js'))
+    .pipe(concat('bundle.js'))
     .pipe(babel({
       presets: ['@babel/preset-env', '@babel/preset-react'],
     }))
     .pipe(gulp.dest('./hosted/'));
-
-  done();
-};
-
-const appBundleTask = (done) => {
-  gulp.src(['./client/*.js', '.client/*.js'])
-    .pipe(concat('appBundle.js'))
-    .pipe(babel({
-      presets: ['@babel/preset-env', '@babel/preset-react'],
-    }))
-    .pipe(gulp.dest('./hosted/'));
-
   done();
 };
 
@@ -71,7 +58,7 @@ const lintTask = (done) => {
 // we can create a "build" script that can run them all. Since none of them are
 // reliant on each other, we can have them all run in parallel. After exporting
 // this, we can write a script like our "build" script in package.json.
-module.exports.build = gulp.parallel(sassTask, loginBunleTask, appBundleTask, lintTask);
+module.exports.build = gulp.parallel(sassTask, buildTask, lintTask);
 
 
 // We can also use our above tasks in a watch script. Just like our previous
