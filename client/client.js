@@ -88,4 +88,21 @@ $(document).ready(() => {
 
     return false;
   });
+
+  /* Adding new data to database (meals) */
+  $('#changePassword').on('submit', (e) => {
+    e.preventDefault();
+
+    /* if any of the fields are blank show error */
+    if ($('#oldPass').val() == '' || $('#newPass1').val() == '' || $('#newPass2').val() == '') {
+      handleError('All fields are required');
+      return false;
+    }
+
+    $('#error').fadeIn(200);
+    /* Otherwise continue loading new page */
+    // sendAjax($('#changePassword').attr('action'), $('#changePassword').serialize());
+
+    return false;
+  });
 });
