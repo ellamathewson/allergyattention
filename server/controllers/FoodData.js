@@ -49,7 +49,7 @@ const makePost = (req, res) => {
 
   const dataPromise = newMeal.save();
 
-  dataPromise.then(() => res.redirect('/maker'));
+  dataPromise.then(() => res.json({ redirect: 'maker' }));
 
   dataPromise.catch((err) => {
     console.log(err);
@@ -65,4 +65,4 @@ const makePost = (req, res) => {
 
 module.exports.makerPage = makerPage;
 module.exports.dataPage = dataPage;
-module.exports.make = makePost;
+module.exports.makePost = makePost;
