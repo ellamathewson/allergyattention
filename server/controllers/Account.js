@@ -7,28 +7,29 @@ const { Account } = models;
 
 const AccountData = models.Account;
 
-// Renders login page
+/* Renders login page */
 const loginPage = (req, res) => {
   res.render('login', { csrfToken: req.csrfToken() });
 };
 
+/* Renders error page for 404 */
 const errorPage = (req, res) => {
   res.render('error', { csrfToken: req.csrfToken() });
 };
 
-// Renders signup page
+/* Renders signup page */
 const signupPage = (req, res) => {
   res.render('signup', { csrfToken: req.csrfToken() });
 };
 
-// runs logout function
+/* Runs logout function  */
 const logout = (req, res) => {
-  // removes a user's session
+  /* Removes users session */
   req.session.destroy();
   res.redirect('/');
 };
 
-// runs login
+/* Runs login functionality  */
 const login = (request, response) => {
   const req = request;
   const res = response;
@@ -54,7 +55,7 @@ const login = (request, response) => {
   });
 };
 
-// runs signup functionality
+/* Runs signup functionality */
 const signup = (request, response) => {
   const req = request;
   const res = response;
@@ -102,7 +103,7 @@ const signup = (request, response) => {
   });
 };
 
-// Renders Account page
+/* Renders account page */
 const accountPage = (req, res) => {
   AccountData.AccountModel.findByUsername(req.session.account.username, (err, docs) => {
     if (err) {
@@ -114,9 +115,9 @@ const accountPage = (req, res) => {
       userInfo: req.session.account,
     });
   });
-  // res.render('account', { csrfToken: req.csrfToken() });
 };
 
+/* Runs changing password functionality */
 const changePassword = (request, response) => {
   const req = request;
   const res = response;
@@ -149,6 +150,7 @@ const changePassword = (request, response) => {
   );
 };
 
+/* Exports all the functions */
 module.exports.errorPage = errorPage;
 module.exports.loginPage = loginPage;
 module.exports.login = login;
