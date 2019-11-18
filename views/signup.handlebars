@@ -25,7 +25,6 @@
   <a id="title">Allergy Attention</a>
   <a href="/login">Login</a>
   <a href="/signup" class="active">Signup</a>
-  <a href="#about">About</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <img class="hamburger" src="/assets/img/menu.png">
   </a>
@@ -47,6 +46,7 @@
         <input type="hidden" name="_csrf" value={{csrfToken}} />
         <input class="formSubmit" type="submit" value="Sign Up" />
       </form>
+        <div class="alert alert-danger" role="alert" id="error"> Error </div>
       </div>
     </div>
 
@@ -75,6 +75,7 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="/assets/bundle.js"></script>
+
     <script>
       function myFunction() {
       var x = document.getElementById("myTopnav");

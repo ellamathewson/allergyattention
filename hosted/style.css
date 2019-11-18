@@ -292,3 +292,6 @@ a {
     Error Message
   
   */
+#error {
+  display: none;
+}

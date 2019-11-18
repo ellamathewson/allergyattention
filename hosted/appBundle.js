@@ -11,8 +11,8 @@
 /* eslint-disable no-undef */
 var handleError = function handleError(message) {
   console.log('in handle error');
-  $('#errorMessageLabel').innerHTML = message;
-  $('#errorMessage').modal('show');
+  $('#error').text = message;
+  $('#error').fadeIn(300);
 };
 
 var sendAjax = function sendAjax(action, data) {
@@ -23,7 +23,7 @@ var sendAjax = function sendAjax(action, data) {
     data: data,
     dataType: 'json',
     success: function success(result, status, xhr) {
-      $('#errorModal').modal('hide');
+      $('#error').fadeOut(200);
       window.location = result.redirect;
     },
     error: function error(xhr, status, _error) {
@@ -35,7 +35,7 @@ var sendAjax = function sendAjax(action, data) {
 
 $(document).ready(function () {
   $('#signupForm').on('submit', function (e) {
-    e.preventDefault();
+    e.preventDefault(); // $('#error').fadeOut(200);
 
     if ($('#user').val() == '' || $('#pass').val() == '' || $('#pass2').val() == '') {
       handleError('All fields are required');
@@ -63,7 +63,6 @@ $(document).ready(function () {
   });
   $('#mealForm').on('submit', function (e) {
     e.preventDefault();
-    $('#errorModal').modal('hide');
     console.log("test".concat($('#reactionLevel').val()));
 
     if ($('#mealName').val() == '' || $('#mealIngredients').val() == '') {

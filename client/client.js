@@ -5,8 +5,8 @@
 /* eslint-disable no-undef */
 const handleError = (message) => {
   console.log('in handle error');
-  $('#errorMessageLabel').innerHTML = message;
-  $('#errorMessage').modal('show');
+  $('#error').text = message;
+  $('#error').fadeIn(300);
 };
 
 const sendAjax = (action, data) => {
@@ -17,7 +17,7 @@ const sendAjax = (action, data) => {
     data: data,
     dataType: 'json',
     success: (result, status, xhr) => {
-      $('#errorModal').modal('hide');
+      $('#error').fadeOut(200);
 
       window.location = result.redirect;
     },
@@ -32,6 +32,7 @@ const sendAjax = (action, data) => {
 $(document).ready(() => {
   $('#signupForm').on('submit', (e) => {
     e.preventDefault();
+    // $('#error').fadeOut(200);
 
     if ($('#user').val() == '' || $('#pass').val() == '' || $('#pass2').val() == '') {
       handleError('All fields are required');
