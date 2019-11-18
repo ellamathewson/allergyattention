@@ -28,24 +28,6 @@ const dataPage = (req, res) => {
   });
 };
 
-const searchFood = (req, res) => {
-  if (!req.query.name) {
-    return res.status(400).json({ error: 'Field is required to perform a search' });
-  }
-
-  return Data.DataModel.findByName(req.query.name, (err, doc) => {
-    if (err) {
-      return res.status(400).json({ error: err });
-    }
-
-    if (!doc) {
-      return res.status(400).json({ error: 'No meals found' });
-    }
-
-    return res.json({ name: doc.name, ingredients: doc.ingredients });
-  });
-};
-
 const makePost = (req, res) => {
   if (!req.body.name || !req.body.ingredients) {
     return res.status(400).json({ error: 'All fields are required' });

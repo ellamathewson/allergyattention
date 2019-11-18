@@ -69,15 +69,6 @@ DataSchema.statics.findByMeal = (ownerId, callback) => {
   return DataModel.find(search).select('name ingredients level date').exec(callback);
 };
 
-DataSchema.statics.findByName = (name, callback) => {
-  console.log(name);
-  const search = {
-    name,
-  };
-
-  return DataModel.find(search).select('name ingredients').exec(callback);
-};
-
 DataModel = mongoose.model('Data', DataSchema);
 
 module.exports.DataModel = DataModel;
