@@ -63,4 +63,3 @@ const makePost = (req, res) => {
 module.exports.makerPage = makerPage;
 module.exports.dataPage = dataPage;
 module.exports.make = makePost;
-module.exports.searchFood = searchFood;
