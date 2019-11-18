@@ -59,15 +59,13 @@
       </div>
 
       <!-- Search Widget -->
-        <div class="search">
-          <h3>Search</h3>
-            <form class="searchBar" name="searchForm" action="/searchFood" method="GET">
-              <input type="text" name="name" class="form-control" id="searchInput" placeholder="Search for...">
-              <input class="formSubmit" type="submit" value="Go">
+      <div class="search">
+        <h3>Search</h3>
+          <form class="searchBar" name="searchForm" method="GET">
+            <input type="text" class="form-control" id="searchInput" placeholder="Search for...">
+            <button class="formSubmit" type="button" onclick="searchData()">Go</button>
             </form>
-            {{!-- <input type="text" class="form-control" id="searchInput" placeholder="Search for...">
-              <button class="formSubmit" type="button" onclick="searchData()">Go</button> --}}
-        </div>
+      </div>
   </div>  
 
     <div class="main">
@@ -113,9 +111,6 @@
         <div class="modal-header">
           <h5 class="modal-title" id="searchEmptyLabel">Error: No results for ${input} found</h5>
         </div>
-        {{!-- <div class="modal-body">
-          <h3><span id="errorMessage"></span></h3>
-        </div>--}}
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" onclick="removeSearch()">Okay</button>
         </div> 
