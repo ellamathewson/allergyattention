@@ -5,6 +5,7 @@ const models = require('../models');
 
 const Data = models.Data;
 
+/* Renders app page */
 const makerPage = (req, res) => {
   Data.DataModel.findByMeal(req.session.account._id, (err, docs) => {
     if (err) {
@@ -15,6 +16,7 @@ const makerPage = (req, res) => {
   });
 };
 
+/* Renders data page */
 const dataPage = (req, res) => {
   Data.DataModel.findByMeal(req.session.account._id, (err, docs) => {
     if (err) {
@@ -28,6 +30,7 @@ const dataPage = (req, res) => {
   });
 };
 
+/* Adding meal to database functionality */
 const makePost = (req, res) => {
   if (!req.body.name || !req.body.ingredients) {
     return res.status(400).json({ error: 'All fields are required' });
