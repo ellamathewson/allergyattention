@@ -23,7 +23,7 @@ const csrf = require('csurf');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
-const dbURL = process.env.MONGODB_URI || 'mongodb://localhost/DomoMaker';
+const dbURL = process.env.MONGODB_URI || 'mongodb://localhost/Maker';
 
 mongoose.connect(dbURL, (err) => {
   if (err) {
@@ -57,7 +57,7 @@ app.use(bodyParser.urlencoded({
 app.use(session({
   key: 'sessionid',
   store: new RedisStore({ client }),
-  secret: 'Domo Arigato',
+  secret: 'Chicken Nuggets',
   resave: 'true',
   saveUninitialized: true,
   // prevents client side JS from accessing cookies

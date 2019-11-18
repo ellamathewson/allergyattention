@@ -65,7 +65,7 @@ const signup = (request, response) => {
 
   // checks that all fields are filled out
   if (!req.body.username || !req.body.pass || !req.body.pass2) {
-    return res.status(400).json({ error: 'RAWR! All fields are required' });
+    return res.status(400).json({ error: 'All fields are required' });
   }
 
   // makes sure the passwords match

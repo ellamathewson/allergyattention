@@ -52,7 +52,7 @@ const makePost = (req, res) => {
   }
   console.log(req.body.level);
 
-  const domoData = {
+  const foodData = {
     name: req.body.name,
     ingredients: req.body.ingredients,
     level: req.body.level,
@@ -60,9 +60,9 @@ const makePost = (req, res) => {
     owner: req.session.account._id,
   };
 
-  const newDomo = new Data.DataModel(domoData);
+  const newMeal = new Data.DataModel(foodData);
 
-  const dataPromise = newDomo.save();
+  const dataPromise = newMeal.save();
 
   dataPromise.then(() => res.redirect('/maker'));
 

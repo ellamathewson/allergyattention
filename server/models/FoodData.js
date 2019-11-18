@@ -78,7 +78,7 @@ DataSchema.statics.findByName = (name, callback) => {
   return DataModel.find(search).select('name ingredients').exec(callback);
 };
 
-DataModel = mongoose.model('Domo', DataSchema);
+DataModel = mongoose.model('Data', DataSchema);
 
 module.exports.DataModel = DataModel;
 module.exports.DataSchema = DataSchema;
