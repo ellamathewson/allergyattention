@@ -81,14 +81,13 @@
         <div class="meal">
           {{#if foodData}}
           {{#each foodData}}
-        <div class="card mb-4">
-          {{!-- <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> --}}
+        <div class="card mb-4" id="mealCard" onclick="showData()">
           <div class="card-body">
             <h2 class="card-title">{{this.name}}</h2>
             <p class="card-text">{{this.ingredients}}</p>
             <p class="card-text">Reaction: {{this.level}}</p>
           </div>
-          <div class="card-footer text-muted">
+          <div class="card-footer text-muted" id="foodFooter">
             {{this.date}}
           </div>
         </div>
@@ -180,6 +179,10 @@
           card.style.display = "block";
           tag.style.display = "none";
         });
+    }
+
+    const showData = () => {
+      window.location.href="/data";
     }
   </script>
 

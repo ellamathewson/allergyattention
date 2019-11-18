@@ -15,12 +15,6 @@ footer {
     margin-top: 25vh;
 }
 
-#makeDomo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 #aboutCard {
     border: none;
 }
@@ -166,13 +160,6 @@ a {
     cursor: pointer;
   }
 
-  /* footer {
-      position: absolute;
-      bottom: 0;
-      width: 100vw;
-      height: 3em;
-  } */
-
   .epipenAd {
       width: 75%;
       margin: 0 13%;
@@ -216,10 +203,11 @@ a {
       align-items: center;
   }
 
-  /* .searchBar {
-      display: flex;
-      flex-direction: row;
-  } */
+  #mealCard:hover {
+    background-color: #62BEC1;
+    color: white;
+    cursor: pointer;
+  }
 
   .add {
     width: 80%;
