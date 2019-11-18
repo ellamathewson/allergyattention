@@ -15,10 +15,6 @@ footer {
     margin-top: 25vh;
 }
 
-#aboutCard {
-    border: none;
-}
-
 content {
     display: flex;
     flex-direction: column;
@@ -37,6 +33,7 @@ content {
 /* 
 
     NAV BAR 
+    Some code from Bootstrap template theme: https://startbootstrap.com/templates/blog-home/
 
 */
 
@@ -120,15 +117,6 @@ a {
       align-items: center;
   }
 
-  .addForm {
-    width: 25vw;
-    margin: 5vh 0 0 0;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   h3 {
     margin-bottom: 1em!important;
   }
@@ -173,6 +161,15 @@ a {
 .appPage {
     display: flex;
     flex-direction: row;
+  }
+
+  .addForm {
+    width: 25vw;
+    margin: 5vh 0 0 0;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .main, .sidebar {
